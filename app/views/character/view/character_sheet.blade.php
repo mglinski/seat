@@ -224,7 +224,10 @@
             @foreach($employment_history as $employment)
 
               <li>
-                <img src='https://image.eveonline.com/Corporation/{{ $employment->corporationID }}_32.png' class='img-circle'>
+                <img src='{{ URL::asset('assets/img/bg.png') }}'
+                     data-src="//image.eveonline.com/Corporation/{{ $employment->corporationID }}_32.png"
+                     data-src-retina="//image.eveonline.com/Corporation/{{ $employment->corporationID }}_64.png"
+                     class='img-circle'>
                 Joined <b><span rel="id-to-name">{{ $employment->corporationID }}</span></b> on {{ $employment->startDate }} ({{ Carbon\Carbon::parse($employment->startDate)->diffForHumans() }})
               </li>
 

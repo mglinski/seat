@@ -48,7 +48,10 @@
 
                       <tr>
                         <td>
-                          <img src='{{ App\Services\Helpers\Helpers::generateEveImage($e->characterID, 32) }}' class='img-circle' style='width: 18px;height: 18px;'>
+                          <img src='{{ URL::asset('assets/img/bg.png') }}'
+                               data-src="{{ App\Services\Helpers\Helpers::generateEveImage($e->characterID, 32) }}"
+                               data-src-retina="{{ App\Services\Helpers\Helpers::generateEveImage($e->characterID, 64) }}"
+                               class='img-circle' style='width: 18px;height: 18px;'>
                           {{ $e->name }}
                         </td>
                         <td>
@@ -88,7 +91,10 @@
 
                       <tr>
                         <td>
-                          <img src='{{ App\Services\Helpers\Helpers::generateEveImage($e->characterID, 32) }}' class='img-circle' style='width: 18px;height: 18px;'>
+                          <img src='{{ URL::asset('assets/img/bg.png') }}'
+                               data-src="{{ App\Services\Helpers\Helpers::generateEveImage($e->characterID, 32) }}"
+                               data-src-retina="{{ App\Services\Helpers\Helpers::generateEveImage($e->characterID, 64) }}"
+                               class='img-circle' style='width: 18px;height: 18px;'>
                           {{ $e->name }}
                         </td>
                         <td>
@@ -128,7 +134,10 @@
 
                       <tr>
                         <td>
-                          <img src='{{ App\Services\Helpers\Helpers::generateEveImage($e->characterID, 32) }}' class='img-circle' style='width: 18px;height: 18px;'>
+                          <img src='{{ URL::asset('assets/img/bg.png') }}'
+                               data-src="{{ App\Services\Helpers\Helpers::generateEveImage($e->characterID, 32) }}"
+                               data-src-retina="{{ App\Services\Helpers\Helpers::generateEveImage($e->characterID, 64) }}"
+                               class='img-circle' style='width: 18px;height: 18px;'>
                           {{ $e->name }}
                         </td>
                         <td>
@@ -168,7 +177,10 @@
 
                       <tr>
                         <td>
-                          <img src='{{ App\Services\Helpers\Helpers::generateEveImage($e->characterID, 32) }}' class='img-circle' style='width: 18px;height: 18px;'>
+                          <img src='{{ URL::asset('assets/img/bg.png') }}'
+                               data-src="{{ App\Services\Helpers\Helpers::generateEveImage($e->characterID, 32) }}"
+                               data-src-retina="{{ App\Services\Helpers\Helpers::generateEveImage($e->characterID, 64) }}"
+                               class='img-circle' style='width: 18px;height: 18px;'>
                           {{ $e->name }}
                         </td>
                         <td>
@@ -208,7 +220,10 @@
 
                       <tr>
                         <td>
-                          <img src='{{ App\Services\Helpers\Helpers::generateEveImage($e->characterID, 32) }}' class='img-circle' style='width: 18px;height: 18px;'>
+                          <img src='{{ URL::asset('assets/img/bg.png') }}'
+                               data-src="{{ App\Services\Helpers\Helpers::generateEveImage($e->characterID, 32) }}"
+                               data-src-retina="{{ App\Services\Helpers\Helpers::generateEveImage($e->characterID, 64) }}"
+                               class='img-circle' style='width: 18px;height: 18px;'>
                           {{ $e->name }}
                         </td>
                         <td>
@@ -248,7 +263,10 @@
 
                       <tr>
                         <td>
-                          <img src='{{ App\Services\Helpers\Helpers::generateEveImage($e->characterID, 32) }}' class='img-circle' style='width: 18px;height: 18px;'>
+                          <img src='{{ URL::asset('assets/img/bg.png') }}'
+                               data-src="{{ App\Services\Helpers\Helpers::generateEveImage($e->characterID, 32) }}"
+                               data-src-retina="{{ App\Services\Helpers\Helpers::generateEveImage($e->characterID, 64) }}"
+                               class='img-circle' style='width: 18px;height: 18px;'>
                           {{ $e->name }}
                         </td>
                         <td>
@@ -288,7 +306,10 @@
 
                       <tr>
                         <td>
-                          <img src='{{ App\Services\Helpers\Helpers::generateEveImage($e->characterID, 32) }}' class='img-circle' style='width: 18px;height: 18px;'>
+                          <img src='{{ URL::asset('assets/img/bg.png') }}'
+                               data-src="{{ App\Services\Helpers\Helpers::generateEveImage($e->characterID, 32) }}"
+                               data-src-retina="{{ App\Services\Helpers\Helpers::generateEveImage($e->characterID, 64) }}"
+                               class='img-circle' style='width: 18px;height: 18px;'>
                           {{ $e->name }}
                         </td>
                         <td>
@@ -328,7 +349,10 @@
 
                       <tr>
                         <td>
-                          <img src='{{ App\Services\Helpers\Helpers::generateEveImage($e->characterID, 32) }}' class='img-circle' style='width: 18px;height: 18px;'>
+                          <img src='{{ URL::asset('assets/img/bg.png') }}'
+                               data-src="{{ App\Services\Helpers\Helpers::generateEveImage($e->characterID, 32) }}"
+                               data-src-retina="{{ App\Services\Helpers\Helpers::generateEveImage($e->characterID, 64) }}"
+                               class='img-circle' style='width: 18px;height: 18px;'>
                           {{ $e->name }}
                         </td>
                         <td>
@@ -373,10 +397,16 @@
 
                       <tr>
                         <td>
-                          <img src='{{ App\Services\Helpers\Helpers::generateEveImage($e->characterID, 32) }}' class='img-circle' style='width: 18px;height: 18px;'> {{ $e->characterName }}
+                          <img src='{{ URL::asset('assets/img/bg.png') }}'
+                               data-src="{{ App\Services\Helpers\Helpers::generateEveImage($e->characterID, 32) }}"
+                               data-src-retina="{{ App\Services\Helpers\Helpers::generateEveImage($e->characterID, 64) }}"
+                               class='img-circle' style='width: 18px;height: 18px;'> {{ $e->characterName }}
                         </td>
                         <td>
-                          <img src='{{ App\Services\Helpers\Helpers::generateEveImage($e->issuerID, 32) }}' class='img-circle' style='width: 18px;height: 18px;'> {{ $e->issuerName }}
+                          <img src='{{ URL::asset('assets/img/bg.png') }}'
+                               data-src="{{ App\Services\Helpers\Helpers::generateEveImage($e->issuerID, 32) }}"
+                               data-src-retina="{{ App\Services\Helpers\Helpers::generateEveImage($e->issuerID, 64) }}"
+                               class='img-circle' style='width: 18px;height: 18px;'> {{ $e->issuerName }}
                         </td>
                         <td>{{ $e->roleLocationType }}</td>
                         <td>{{ $e->changeTime }}</td>

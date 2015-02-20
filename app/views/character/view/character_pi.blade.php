@@ -42,12 +42,21 @@
                       @if($route->planetID == $colony['planetID'])
                         <tbody>
                           <tr>
-                            <td><img src='//image.eveonline.com/Type/{{ $route->sourceTypeID }}_32.png' style='width: 18px;height: 18px;'>{{ $route->sourceTypeName }}</td>
-                            <td><img src='//image.eveonline.com/Type/{{ $route->contentTypeID }}_32.png' style='width: 18px;height: 18px;'> {{ $route->contentTypeName }} ({{ $route->quantity }})</td>
+                            <td><img src='{{ URL::asset('assets/img/bg.png') }}'
+                                     data-src="//image.eveonline.com/Type/{{ $route->sourceTypeID }}_32.png"
+                                     data-src-retina="//image.eveonline.com/Type/{{ $route->sourceTypeID }}_64.png"
+                                     style='width: 18px;height: 18px;'>{{ $route->sourceTypeName }}</td>
+                            <td><img src='{{ URL::asset('assets/img/bg.png') }}'
+                                     data-src="//image.eveonline.com/Type/{{ $route->contentTypeID }}_32.png"
+                                     data-src-retina="//image.eveonline.com/Type/{{ $route->contentTypeID }}_64.png"
+                                     style='width: 18px;height: 18px;'> {{ $route->contentTypeName }} ({{ $route->quantity }})</td>
                             <td>@if($route->cycleTime != 0){{ $route->cycleTime }} minutes @endif</td>
                             <td>@if($route->quantityPerCycle != 0){{ $route->quantityPerCycle }} @endif</td>
                             <td>@if( date('Y-m-d H:i:s') < ($route->expiryTime)){{ Carbon\Carbon::parse($route->expiryTime)->diffForHumans() }}@else No Active Cycle @endif</td>
-                            <td><img src='//image.eveonline.com/Type/{{ $route->destinationTypeID }}_32.png' style='width: 18px;height: 18px;'>{{ $route->destinationTypeName }}</td>
+                            <td><img src='{{ URL::asset('assets/img/bg.png') }}'
+                                     data-src="//image.eveonline.com/Type/{{ $route->destinationTypeID }}_32.png"
+                                     data-src-retina="//image.eveonline.com/Type/{{ $route->destinationTypeID }}_64.png"
+                                     style='width: 18px;height: 18px;'>{{ $route->destinationTypeName }}</td>
                           </tr>
                         </tbody>
                       @endif
@@ -78,9 +87,16 @@
                       @if($link->planetID == $colony['planetID'])
                         <tbody>
                           <tr>
-                            <td><img src='//image.eveonline.com/Type/{{ $link->sourceTypeID }}_32.png' style='width: 18px;height: 18px;'>{{ $link->sourceTypeName }}</td>
+                            <td><img src='{{ URL::asset('assets/img/bg.png') }}'
+                                     data-src="//image.eveonline.com/Type/{{ $link->sourceTypeID }}_32.png"
+                                     data-src-retina="//image.eveonline.com/Type/{{ $link->sourceTypeID }}_64.png"
+
+                                     style='width: 18px;height: 18px;'>{{ $link->sourceTypeName }}</td>
                             <td>{{ $link->linkLevel }}</td>
-                            <td><img src='//image.eveonline.com/Type/{{ $link->destinationTypeID }}_32.png' style='width: 18px;height: 18px;'>{{ $link->destinationTypeName }}</td>
+                            <td><img src='{{ URL::asset('assets/img/bg.png') }}'
+                                     data-src="//image.eveonline.com/Type/{{ $link->destinationTypeID }}_32.png"
+                                     data-src-retina="//image.eveonline.com/Type/{{ $link->destinationTypeID }}_64.png"
+                                     style='width: 18px;height: 18px;'>{{ $link->destinationTypeName }}</td>
                           </tr>
                         </tbody>
                       @endif
@@ -108,7 +124,10 @@
                       @if($installation->planetID == $colony['planetID'])
                         <tbody>
                           <tr>
-                            <td><img src='//image.eveonline.com/Type/{{ $installation->typeID }}_32.png' style='width: 18px;height: 18px;'> {{ $installation->typeName }}</td>
+                            <td><img src='{{ URL::asset('assets/img/bg.png') }}'
+                                     data-src="//image.eveonline.com/Type/{{ $installation->typeID }}_32.png"
+                                     data-src-retina="//image.eveonline.com/Type/{{ $installation->typeID }}_64.png"
+                                     style='width: 18px;height: 18px;'> {{ $installation->typeName }}</td>
                           </tr>
                         </tbody>
                       @endif

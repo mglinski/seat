@@ -21,7 +21,10 @@
               @foreach ($research as $agent)
 
                 <tr>
-                  <td><img src="//image.eveonline.com/Character/{{ $agent->agentID }}_32.jpg" class="img-circle" style="width: 18px;height: 18px;"> {{ $agent->itemName }}</td>
+                  <td><img src='{{ URL::asset('assets/img/bg.png') }}'
+                           data-src="//image.eveonline.com/Character/{{ $agent->agentID }}_32.jpg"
+                           data-src-retina="//image.eveonline.com/Character/{{ $agent->agentID }}_64.jpg"
+                           class="img-circle" style="width: 18px;height: 18px;"> {{ $agent->itemName }}</td>
                   <td>{{ $agent->typeName }}</td>
                   <td>{{ $agent->researchStartDate }}</td>
                   <td>{{ $agent->pointsPerDay }}</td>
