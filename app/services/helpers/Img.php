@@ -134,6 +134,11 @@ class Img {
 		// unset already built attributes
 		unset($attrs['src'], $attrs['data-src='], $attrs['data-src-retina']);
 
+		// set default height/width to keep images sizes correct
+		if (!isset($attrs['style'])) {
+			$attrs['style'] = "width:{$size}px; height:{$size}px;";
+		}
+
 		// render other attributes
 		foreach ($attrs as $name => $value) {
 			$html .= "{$name}=\"{$value}\" ";
