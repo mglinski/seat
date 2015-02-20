@@ -13,7 +13,7 @@
           <p>From character: {{ $corp->characterName }}</p>
         </div>
         <div class="icon">
-            {{ Seat\services\helpers\Img::corporation($corp->corporationID, 32, array('class' => 'img-circle')) }}
+            {{ Seat\services\helpers\Img::corporation($corp->corporationID, 32, array('class' => 'img-circle', 'style' => 'width:32px; height:32px')) }}
         </div>
         <a href="{{ action('CorporationController@getIndustry', array('corporationID' => $corp->corporationID)) }}" class="small-box-footer">
           View Corporation Jobs <i class="fa fa-arrow-circle-right"></i>
