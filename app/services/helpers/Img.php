@@ -1,8 +1,6 @@
 <?php
 /**
  * Img.php
- * Created by: matthewglinski
- * Date: 2/20/15 9:57 AM
  */
 
 namespace Seat\services\helpers;
@@ -37,7 +35,7 @@ class Img {
 	/**
 	 * @var array
 	 */
-	protected $types = array(
+	private static $types = array(
 		0 => 'Character',
 		1 => 'Corporation',
 		2 => 'Alliance',
