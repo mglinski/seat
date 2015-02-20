@@ -139,6 +139,9 @@
 
       $(document).ready(function() {
           $("img").unveil();
+          $(window).on('resize', function(){
+              $("img").unveil();
+          });
       });
 
     </script>
