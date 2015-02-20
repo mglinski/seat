@@ -129,7 +129,7 @@ class Img {
 		$html = '<img ';
 
 		// generate desired HTML attributes to properly lazy load
-		$html .= 'src="' . \URL::asset('assets/img/loader.gif') . '" ';
+		$html .= 'src="' . \URL::asset('assets/img/loading.gif') . '" ';
 		$html .= 'data-src="' . self::_renderUrl($id, $size, $type) . '" ';
 		$html .= 'data-src-retina="' . self::_renderUrl($id, ($size * 2), $type) . '" ';
 
