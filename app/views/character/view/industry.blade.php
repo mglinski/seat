@@ -69,11 +69,11 @@
                       </td>
                       <td>{{ $job->runs }}</td>
                       <td>
-                          {{ Seat\services\helpers\Img::type($job->blueprintTypeID, 32, array('class' => 'img-circle', 'style' => 'width: 18px;height: 18px;', )) }}
+                          {{ Seat\services\helpers\Img::type($job->blueprintTypeID, 32, array('style' => 'width: 18px;height: 18px;', )) }}
                           {{ $job->blueprintTypeName }}
                       </td>
                       <td>
-                          {{ Seat\services\helpers\Img::type($job->productTypeID, 32, array('class' => 'img-circle', 'style' => 'width: 18px;height: 18px;', )) }}
+                          {{ Seat\services\helpers\Img::type($job->productTypeID, 32, array('style' => 'width: 18px;height: 18px;', )) }}
                           {{ $job->productTypeName }}
                       </td>
                       <td>{{ $job->location }}</td>
@@ -130,11 +130,11 @@
                       </td>
                       <td>{{ $job->runs }}</td>
                       <td>
-                          {{ Seat\services\helpers\Img::type($job->blueprintTypeID, 32, array('class' => 'img-circle', 'style' => 'width: 18px;height: 18px;', )) }}
+                          {{ Seat\services\helpers\Img::type($job->blueprintTypeID, 32, array('style' => 'width: 18px;height: 18px;', )) }}
                           {{ $job->blueprintTypeName }}
                       </td>
                       <td>
-                          {{ Seat\services\helpers\Img::type($job->productTypeID, 32, array('class' => 'img-circle', 'style' => 'width: 18px;height: 18px;', )) }}
+                          {{ Seat\services\helpers\Img::type($job->productTypeID, 32, array('style' => 'width: 18px;height: 18px;', )) }}
                           {{ $job->productTypeName }}
                       </td>
                       <td>{{ $job->location }}</td>

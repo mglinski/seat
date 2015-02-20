@@ -37,7 +37,7 @@
                       </td>
                       <td>
                         <a href="https://zkillboard.com/kill/{{ $killmail->killID }}/" target="_blank">
-                          {{ Seat\services\helpers\Img::type($killmail->shipTypeID, 32, array('class' => 'img-circle', 'style' => 'width: 18px;height: 18px;', )) }}
+                          {{ Seat\services\helpers\Img::type($killmail->shipTypeID, 32, array('style' => 'width: 18px;height: 18px;', )) }}
                           {{ $killmail->typeName }}
                         </a>
                       </td>
