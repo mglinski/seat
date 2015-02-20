@@ -43,18 +43,18 @@
                         <tbody>
                           <tr>
                             <td>
-                                {{ Seat\services\helpers\Img::type($route->sourceTypeID, 32, array('class' => 'img-circle', 'style' => 'width: 18px;height: 18px;', )) }}
+                                {{ Seat\services\helpers\Img::type($route->sourceTypeID, 32, array('class' => 'img-circle' )) }}
                                 {{ $route->sourceTypeName }}
                             </td>
                             <td>
-                                {{ Seat\services\helpers\Img::type($route->contentTypeID, 32, array('class' => 'img-circle', 'style' => 'width: 18px;height: 18px;', )) }}
+                                {{ Seat\services\helpers\Img::type($route->contentTypeID, 32, array('class' => 'img-circle' )) }}
                                 {{ $route->contentTypeName }} ({{ $route->quantity }})
                             </td>
                             <td>@if($route->cycleTime != 0){{ $route->cycleTime }} minutes @endif</td>
                             <td>@if($route->quantityPerCycle != 0){{ $route->quantityPerCycle }} @endif</td>
                             <td>@if( date('Y-m-d H:i:s') < ($route->expiryTime)){{ Carbon\Carbon::parse($route->expiryTime)->diffForHumans() }}@else No Active Cycle @endif</td>
                             <td>
-                                {{ Seat\services\helpers\Img::type($route->destinationTypeID, 32, array('class' => 'img-circle', 'style' => 'width: 18px;height: 18px;', )) }}
+                                {{ Seat\services\helpers\Img::type($route->destinationTypeID, 32, array('class' => 'img-circle' )) }}
                                 {{ $route->destinationTypeName }}
                             </td>
                           </tr>
@@ -88,12 +88,12 @@
                         <tbody>
                           <tr>
                             <td>
-                                {{ Seat\services\helpers\Img::type($link->sourceTypeID, 32, array('class' => 'img-circle', 'style' => 'width: 18px;height: 18px;', )) }}
+                                {{ Seat\services\helpers\Img::type($link->sourceTypeID, 32, array('class' => 'img-circle')) }}
                                 {{ $link->sourceTypeName }}
                             </td>
                             <td>{{ $link->linkLevel }}</td>
                             <td>
-                                {{ Seat\services\helpers\Img::type($link->destinationTypeID, 32, array('class' => 'img-circle', 'style' => 'width: 18px;height: 18px;', )) }}
+                                {{ Seat\services\helpers\Img::type($link->destinationTypeID, 32, array('class' => 'img-circle')) }}
                                 {{ $link->destinationTypeName }}
                             </td>
                           </tr>

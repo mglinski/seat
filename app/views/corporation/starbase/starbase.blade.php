@@ -44,7 +44,7 @@
 
                 <tr>
                   <td>
-                      {{ Seat\services\helpers\Img::type($details->typeID, 32, array('class' => 'img-circle', 'style' => 'width: 18px;height: 18px;', )) }}
+                      {{ Seat\services\helpers\Img::type($details->typeID, 32, array('style' => 'width: 18px;height: 18px;', )) }}
                       {{ $details->typeName }}
                   </td>
                   <td><b>{{ $starbase_names[$details->itemID] }}</b></td>
@@ -390,7 +390,7 @@
                                                 <tr>
                                                   <td>{{ $content_item['quantity'] }}</td>
                                                   <td>
-                                                      {{ Seat\services\helpers\Img::type($content_item['typeID'], 32, array('class' => 'img-circle', 'style' => 'width: 18px;height: 18px;', )) }}
+                                                      {{ Seat\services\helpers\Img::type($content_item['typeID'], 32, array(style' => 'width: 18px;height: 18px;', )) }}
                                                       {{ $content_item['name'] }}
                                                   </td>
                                                   <td>{{ round(( ($content_item['quantity'] * $content_item['volume']) / $module_content['used_volume']) * 100, 0) }}%</td>
@@ -462,7 +462,7 @@
 
                                         <ul class="list-unstyled">
                                           <li>
-                                              {{ Seat\services\helpers\Img::type($module_content['typeID'], 32, array('class' => 'img-circle', 'style' => 'width: 18px;height: 18px;', )) }}
+                                              {{ Seat\services\helpers\Img::type($module_content['typeID'], 32, array('style' => 'width: 18px;height: 18px;', )) }}
 
                                               <b>{{ $module_group_name }}</b>
                                              @if(!is_null($module_content['module_name']))
@@ -492,7 +492,7 @@
                                                 <tr>
                                                   <td>{{ $content_item['quantity'] }}</td>
                                                   <td>
-                                                      {{ Seat\services\helpers\Img::type($content_item['typeID'], 32, array('class' => 'img-circle', 'style' => 'width: 18px;height: 18px;', )) }}
+                                                      {{ Seat\services\helpers\Img::type($content_item['typeID'], 32, array('style' => 'width: 18px;height: 18px;', )) }}
 
                                                       {{ $content_item['name'] }}
                                                   </td>
