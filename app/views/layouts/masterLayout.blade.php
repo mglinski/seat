@@ -142,6 +142,9 @@
           $(window).on('resize', function(){
               $("img").unveil();
           });
+          $( document ).ajaxComplete(function() {
+              $("img").unveil();
+          });
       });
 
     </script>
