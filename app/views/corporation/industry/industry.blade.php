@@ -72,7 +72,7 @@
                           </div>
                         </td>
                         <td>
-                            {{ Seat\services\helpers\Img::character($job->installerID, 32, array('class' => 'img-circle')) }}
+                            {{ Seat\services\helpers\Img::character($job->installerID, 32, array('class' => 'img-circle', 'style' => 'width: 18px;height: 18px;')) }}
                             {{ $job->installerName }}
                         </td>
                         <td>{{ $job->runs }}</td>
@@ -134,7 +134,7 @@
                           @endif
                         </td>
                         <td>
-                            {{ Seat\services\helpers\Img::character($job->installerID, 32, array('class' => 'img-circle')) }}
+                            {{ Seat\services\helpers\Img::character($job->installerID, 32, array('class' => 'img-circle', 'style' => 'width: 18px;height: 18px;')) }}
                             {{ $job->installerName }}
                         </td>
                         <td>{{ $job->runs }}</td>
