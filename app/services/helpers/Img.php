@@ -52,8 +52,6 @@ class Img {
 	 */
 	public static function html($id, $size, $attrs) {
 
-		return self::_renderHtml($id, $size, self::Character, $attrs);
-
 		if ($id > 90000000 && $id < 98000000) {
 			return self::character($id, $size, $attrs);
 		}
