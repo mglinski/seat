@@ -7,10 +7,10 @@
       <div class="pull-left image">
         {{-- See SettingHelper why this has to be more than 1 --}}
         @if($settings['main_character_id'] > 1)
-          <img src="{{ App\Services\Helpers\Helpers::generateEveImage( $settings['main_character_id'], 32) }}" class="img-circle" alt="User Image" />
-        @else
-          <img src="//image.eveonline.com/Character/1_32.jpg" class="img-circle" alt="User Image" />
-        @endif
+              {{ Seat\services\helpers\Img::character($settings['main_character_id'], 32, array('class' => 'img-circle', 'alt' => 'User Image', )) }}
+          @else
+              {{ Seat\services\helpers\Img::character('1', 32, array('class' => 'img-circle', 'alt' => 'User Image', )) }}
+          @endif
       </div>
       <div class="pull-left info">
         @if($settings['main_character_id'] > 1)

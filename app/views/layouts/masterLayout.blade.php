@@ -92,6 +92,8 @@
     <script src="{{ URL::asset('assets/js/select2.min.js') }}" type="text/javascript"></script>
     <!--slimscroll -->
     <script src="{{ URL::asset('assets/js/jquery.slimscroll.min.js') }}" type="text/javascript"></script>
+    <!--LazyLoadImages-->
+    <script src="{{ URL::asset('assets/js/jquery.unveil.js') }}" type="text/javascript"></script>
     <!-- app -->
     <script src="{{ URL::asset('assets/js/app.js') }}" type="text/javascript"></script>
 
@@ -133,7 +135,11 @@
       })();
 
       // Specify the location of the search controller
-      var search_location = "{{ action('DashboardController@getSearch') }}"
+      var search_location = "{{ action('DashboardController@getSearch') }}";
+
+      $(document).ready(function() {
+          $("img").unveil();
+      });
 
     </script>
 

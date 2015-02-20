@@ -12,7 +12,7 @@
           <h3 class="box-title">
             All Mail for:
             <a href="{{ action('CharacterController@getView', array('characterID' => $characterID)) }}">
-              <img src='//image.eveonline.com/Character/{{ $characterID }}_32.jpg' class='img-circle'>
+                {{ Seat\services\helpers\Img::character($characterID, 32, array('class' => 'img-circle')) }}
             </a>
             {{ $character_name }}
           </h3>
@@ -47,7 +47,7 @@
                   </td>
                   <td>
                     <a href="{{ action('CharacterController@getView', array('characterID' => $message->senderID)) }}">
-                      <img src='//image.eveonline.com/Character/{{ $message->senderID }}_32.jpg' class='img-circle' style='width: 18px;height: 18px;'>
+                        {{ Seat\services\helpers\Img::character($message->senderID, 32, array('class' => 'img-circle', 'style' => 'width: 18px;height: 18px;', )) }}
                     </a>
                     {{ $message->senderName }}
                   </td>
