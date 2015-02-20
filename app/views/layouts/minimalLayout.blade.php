@@ -66,9 +66,15 @@
     <script src="{{ URL::asset('assets/js/jquery.unveil.js') }}" type="text/javascript"></script>
 
     <script type="text/javascript">
-      $(document).ready(function() {
-          $("img").unveil();
-      });
+        $(document).ready(function() {
+            $("img").unveil();
+            $(window).on('shown.bs.tab', function(){
+                $("img").unveil();
+            });
+            $( document ).ajaxComplete(function() {
+                $("img").unveil();
+            });
+        });
     </script>
 
     </body>

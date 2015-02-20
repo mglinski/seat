@@ -139,7 +139,7 @@
 
       $(document).ready(function() {
           $("img").unveil();
-          $(window).on('resize', function(){
+          $(window).on('shown.bs.tab', function(){
               $("img").unveil();
           });
           $( document ).ajaxComplete(function() {
