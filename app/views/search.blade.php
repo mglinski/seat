@@ -40,7 +40,10 @@
                       <tr>
                         <td>
                           <a href="{{ action('CharacterController@getView', array('characterID' => $character->characterID)) }}">
-                            <img src='//image.eveonline.com/Character/{{ $character->characterID }}_32.jpg' class='img-circle' style='width: 18px;height: 18px;'>
+                            <img src='{{ URL::asset('assets/img/bg.png') }}'
+                                 data-src="//image.eveonline.com/Character/{{ $character->characterID }}_32.jpg"
+                                 data-src-retina="//image.eveonline.com/Character/{{ $character->characterID }}_64.jpg"
+                                 class='img-circle' style='width: 18px;height: 18px;'>
                             {{ App\Services\Helpers\Helpers::highlightKeyword($character->characterName, $keyword) }}
                           </a>
                         </td>
@@ -82,7 +85,10 @@
                       <tr>
                         <td>
                           <a href="{{ action('CharacterController@getView', array('characterID' => $character_asset->characterID)) }}">
-                            <img src='//image.eveonline.com/Character/{{ $character_asset->characterID }}_32.jpg' class='img-circle' style='width: 18px;height: 18px;'>
+                            <img src='{{ URL::asset('assets/img/bg.png') }}'
+                                    data-src="//image.eveonline.com/Character/{{ $character_asset->characterID }}_32.jpg"
+                                    data-src-retina="//image.eveonline.com/Character/{{ $character_asset->characterID }}_64.jpg"
+                                    class='img-circle' style='width: 18px;height: 18px;'>
                             {{ $character_asset->characterName }}
                           </a>
                         </td>
@@ -124,7 +130,10 @@
                       <tr>
                         <td>
                           <a href="{{ action('CharacterController@getView', array('characterID' => $character_contact->characterID)) }}">
-                            <img src='//image.eveonline.com/Character/{{ $character_contact->characterID }}_32.jpg' class='img-circle' style='width: 18px;height: 18px;'>
+                            <img src='{{ URL::asset('assets/img/bg.png') }}'
+                                    data-src="//image.eveonline.com/Character/{{ $character_contact->characterID }}_32.jpg"
+                                    data-src-retina="//image.eveonline.com/Character/{{ $character_contact->characterID }}_64.jpg"
+                                    class='img-circle' style='width: 18px;height: 18px;'>
                             {{ $character_contact->characterName }}
                           </a>
                         </td>
@@ -171,7 +180,10 @@
                       <tr>
                         <td>
                           <a href="{{ action('CharacterController@getView', array('characterID' => $message->senderID)) }}">
-                            <img src='//image.eveonline.com/Character/{{ $message->senderID }}_32.jpg' class='img-circle' style='width: 18px;height: 18px;'>
+                            <img src='{{ URL::asset('assets/img/bg.png') }}'
+                                    data-src="//image.eveonline.com/Character/{{ $message->senderID }}_32.jpg"
+                                    data-src-retina="//image.eveonline.com/Character/{{ $message->senderID }}_64.jpg"
+                                    class='img-circle' style='width: 18px;height: 18px;'>
                             {{ App\Services\Helpers\Helpers::highlightKeyword($message->senderName, $keyword) }}
                           </a>
                         </td>
@@ -214,7 +226,10 @@
                       <tr>
                         <td>
                           <a href="{{ action('CharacterController@getView', array('characterID' => $standing->characterID)) }}">
-                            <img src='//image.eveonline.com/Character/{{ $standing->characterID }}_32.jpg' class='img-circle' style='width: 18px;height: 18px;'>
+                            <img src='{{ URL::asset('assets/img/bg.png') }}'
+                                    data-src="//image.eveonline.com/Character/{{ $standing->characterID }}_32.jpg"
+                                    data-src-retina="//image.eveonline.com/Character/{{ $standing->characterID }}_64.jpg"
+                                    class='img-circle' style='width: 18px;height: 18px;'>
                             {{ App\Services\Helpers\Helpers::highlightKeyword($standing->characterName, $keyword) }}
                           </a>
                         </td>

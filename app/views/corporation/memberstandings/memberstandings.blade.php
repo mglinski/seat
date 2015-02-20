@@ -24,7 +24,10 @@
 
                 <tr>
                   <td>
-                    <img src="{{ App\Services\Helpers\Helpers::generateEveImage( $standing->fromID, 32) }}" class='img-circle' style='width: 18px;height: 18px;'>
+                    <img src='{{ URL::asset('assets/img/bg.png') }}'
+                         data-src="{{ App\Services\Helpers\Helpers::generateEveImage($standing->fromID, 32) }}"
+                         data-src-retina="{{ App\Services\Helpers\Helpers::generateEveImage($standing->fromID, 64) }}"
+                         class='img-circle' style='width: 18px;height: 18px;'>
                     {{ $standing->fromName }}
                   </td>
                   <td>{{ number_format($standing->standing, 2, $settings['decimal_seperator'], $settings['thousand_seperator']) }}</td>
@@ -50,7 +53,10 @@
 
                 <tr>
                   <td>
-                    <img src="{{ App\Services\Helpers\Helpers::generateEveImage( $standing->fromID, 32) }}" class='img-circle' style='width: 18px;height: 18px;'>
+                    <img src='{{ URL::asset('assets/img/bg.png') }}'
+                         data-src="{{ App\Services\Helpers\Helpers::generateEveImage($standing->fromID, 32) }}"
+                         data-src-retina="{{ App\Services\Helpers\Helpers::generateEveImage($standing->fromID, 64) }}"
+                         class='img-circle' style='width: 18px;height: 18px;'>
                     {{ $standing->fromName }}
                   </td>
                   <td>{{ number_format($standing->standing, 2, $settings['decimal_seperator'], $settings['thousand_seperator']) }}</td>
@@ -76,7 +82,10 @@
 
                 <tr>
                   <td>
-                    <img src="{{ App\Services\Helpers\Helpers::generateEveImage( $standing->fromID, 32) }}" class='img-circle' style='width: 18px;height: 18px;'>
+                    <img src='{{ URL::asset('assets/img/bg.png') }}'
+                         data-src="{{ App\Services\Helpers\Helpers::generateEveImage($standing->fromID, 32) }}"
+                         data-src-retina="{{ App\Services\Helpers\Helpers::generateEveImage($standing->fromID, 64) }}"
+                         class='img-circle' style='width: 18px;height: 18px;'>
                     {{ $standing->fromName }}
                   </td>
                   <td>{{ number_format($standing->standing, 2, $settings['decimal_seperator'], $settings['thousand_seperator']) }}</td>

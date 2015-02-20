@@ -7,9 +7,15 @@
       <div class="pull-left image">
         {{-- See SettingHelper why this has to be more than 1 --}}
         @if($settings['main_character_id'] > 1)
-          <img src="{{ App\Services\Helpers\Helpers::generateEveImage( $settings['main_character_id'], 64) }}" class="img-circle" alt="User Image" />
+          <img src='{{ URL::asset('assets/img/bg.png') }}'
+               data-src="{{ App\Services\Helpers\Helpers::generateEveImage( $settings['main_character_id'], 32) }}"
+               data-src-retina="{{ App\Services\Helpers\Helpers::generateEveImage( $settings['main_character_id'], 64) }}"
+               class="img-circle" alt="User Image" />
         @else
-          <img src="//image.eveonline.com/Character/1_64.jpg" class="img-circle" alt="User Image" />
+          <img src='{{ URL::asset('assets/img/bg.png') }}'
+               data-src="//image.eveonline.com/Character/1_32.jpg"
+               data-src-retina="//image.eveonline.com/Character/1_64.jpg"
+               class="img-circle" alt="User Image" />
         @endif
       </div>
       <div class="pull-left info">

@@ -62,6 +62,14 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
     <!-- Bootstrap -->
     <script src="{{ URL::asset('assets/js/bootstrap.min.js') }}" type="text/javascript"></script>
+    <!-- LazyLoadImages -->
+    <script src="{{ URL::asset('assets/js/jquery.unveil.js') }}" type="text/javascript"></script>
+
+    <script type="text/javascript">
+      $(document).ready(function() {
+          $("img").unveil();
+      });
+    </script>
 
     </body>
 

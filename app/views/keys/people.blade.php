@@ -40,7 +40,10 @@
             <div class="col-md-12 btn-group">
               <a href="{{ action('CharacterController@getView', array('characterID' => $personData[0]['main']->characterID )) }}" class="btn btn-default" style="width: 90%; text-align: left;">
                 <span data-toggle="tooltip" title="" data-original-title="{{ $personData[0]['main']->characterName }}">
-                  <img src='//image.eveonline.com/Character/{{ $personData[0]['main']->characterID }}_32.jpg' class='img-circle'>
+                  <img src='{{ URL::asset('assets/img/bg.png') }}'
+                       data-src="//image.eveonline.com/Character/{{ $personData[0]['main']->characterID }}_32.jpg"
+                       data-src-retina="//image.eveonline.com/Character/{{ $personData[0]['main']->characterID }}_64.jpg"
+                       class='img-circle'>
                 </span>
                 {{ str_limit($personData[0]['main']->characterName, 30, $end = '...') }}
                 <small class="text-muted">({{ count($personData) }} keys)</small>
@@ -64,7 +67,10 @@
 
                       <li>
                         <a href="{{ action('CharacterController@getView', array('characterID' => $character->characterID )) }}" style="color:inherit;">
-                          <img src='//image.eveonline.com/Character/{{ $character->characterID }}_32.jpg' class='img-circle' style='width: 18px;height: 18px;'>
+                          <img src='{{ URL::asset('assets/img/bg.png') }}'
+                               data-src="//image.eveonline.com/Character/{{ $character->characterID }}_32.jpg"
+                               data-src-retina="//image.eveonline.com/Character/{{ $character->characterID }}_32.jpg"
+                               class='img-circle' style='width: 18px;height: 18px;'>
                           {{ $character->characterName }}
                         </a>
                         @if ($personData[0]['main']->characterID <> $character->characterID)
@@ -108,7 +114,10 @@
 
                 <li>
                   <a href="{{ action('CharacterController@getView', array('characterID' => $character->characterID )) }}">
-                    <img src='//image.eveonline.com/Character/{{ $character->characterID }}_32.jpg' class='img-circle' style='width: 18px;height: 18px;'>
+                    <img src='{{ URL::asset('assets/img/bg.png') }}'
+                         data-src="//image.eveonline.com/Character/{{ $character->characterID }}_32.jpg"
+                         data-src-retina="//image.eveonline.com/Character/{{ $character->characterID }}_32.jpg"
+                         class='img-circle' style='width: 18px;height: 18px;'>
                   </a>
                   {{ $character->characterName }}
                   <a href="{{ action('ApiKeyController@getNewGroup', array('keyID' => $key, 'characterID' => $character->characterID )) }}" class="pull-right">Use as Main for new Group</a>

@@ -46,7 +46,10 @@
                 <small>
                   <b>From:</b>
                   <a href="{{ action('CharacterController@getView', array('characterID' => $message->senderID)) }}">
-                    <img src='//image.eveonline.com/Character/{{ $message->senderID }}_32.jpg' class='img-circle' style='width: 18px;height: 18px;'>
+                    <img src='{{ URL::asset('assets/img/bg.png') }}'
+                         data-src="//image.eveonline.com/Character/{{ $message->senderID }}_32.jpg"
+                         data-src-retina="//image.eveonline.com/Character/{{ $message->senderID }}_64.jpg"
+                         class='img-circle' style='width: 18px;height: 18px;'>
                   </a>
                   {{ $message->senderName }} sent about {{ Carbon\Carbon::parse($message->sentDate)->diffForHumans() }}
                   @ {{ $message->sentDate }}
@@ -59,7 +62,10 @@
 
                       @foreach (explode(',', $message->toCorpOrAllianceID) as $corp_alliance)
 
-                        <img src='{{ App\Services\Helpers\Helpers::generateEveImage($corp_alliance, 32) }}' class='img-circle' style='width: 18px;height: 18px;'>
+                        <img src='{{ URL::asset('assets/img/bg.png') }}'
+                             data-src="{{ App\Services\Helpers\Helpers::generateEveImage($corp_alliance, 32) }}"
+                             data-src-retina="{{ App\Services\Helpers\Helpers::generateEveImage($corp_alliance, 64) }}"
+                             class='img-circle' style='width: 18px;height: 18px;'>
                         <span rel="id-to-name">{{ $corp_alliance }}</span>
 
                       @endforeach
@@ -73,7 +79,10 @@
                       @foreach (explode(',', $message->toCharacterIDs) as $characterID)
 
                         <a href="{{ action('CharacterController@getView', array('characterID' => $characterID)) }}">
-                          <img src='//image.eveonline.com/Character/{{ $characterID }}_32.jpg' class='img-circle' style='width: 18px;height: 18px;'>
+                          <img src='{{ URL::asset('assets/img/bg.png') }}'
+                               data-src="//image.eveonline.com/Character/{{ $characterID }}_32.jpg"
+                               data-src-retina="//image.eveonline.com/Character/{{ $characterID }}_64.jpg"
+                               class='img-circle' style='width: 18px;height: 18px;'>
                         </a>
                         <span rel="id-to-name">{{ $characterID }}</span>
 

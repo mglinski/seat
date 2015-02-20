@@ -29,7 +29,10 @@
                 <th>Onlined</th>
                 <th>Sec</th>
                 <th>Offline Estimate</th>
-                <th><img src='//image.eveonline.com/Type/4051_32.png' style='width: 18px;height: 18px;'> Fuel Level</th>
+                <th><img src='{{ URL::asset('assets/img/bg.png') }}'
+                         data-src="//image.eveonline.com/Type/4051_32.png"
+                         data-src-retina="//image.eveonline.com/Type/4051_64.png"
+                         style='width: 18px;height: 18px;'> Fuel Level</th>
                 <th>State</th>
                 <th></th>
               </tr>
@@ -40,7 +43,10 @@
 
                 <tr>
                   <td>
-                    <img src='//image.eveonline.com/Type/{{ $details->typeID }}_32.png' class='img-circle' style='width: 18px;height: 18px;'>
+                    <img src='{{ URL::asset('assets/img/bg.png') }}'
+                         data-src="//image.eveonline.com/Type/{{ $details->typeID }}_32.png"
+                         data-src-retina="//image.eveonline.com/Type/{{ $details->typeID }}_64.png"
+                         class='img-circle' style='width: 18px;height: 18px;'>
                     {{ $details->typeName }}
                   </td>
                   <td><b>{{ $starbase_names[$details->itemID] }}</b></td>
@@ -177,7 +183,10 @@
                     </tr>
                     <tr>
                       <td>
-                        <img src='//image.eveonline.com/Type/4051_32.png' style='width: 18px;height: 18px;'>
+                        <img src='{{ URL::asset('assets/img/bg.png') }}'
+                             data-src="//image.eveonline.com/Type/4051_32.png"
+                             data-src-retina="//image.eveonline.com/Type/4051_64.png"
+                             style='width: 18px;height: 18px;'>
                         <b>Fuel Blocks @if($details->security >= 0.5)+ Charters @endif:</b> {{ ($details->starbaseCharter) + ($details->fuelBlocks * 5) }} m3 / {{ $bay_sizes[$details->typeID]['fuelBay'] }} m3
                       </td>
                       <td>
@@ -189,7 +198,10 @@
                     </tr>
                     <tr>
                       <td>
-                        <img src='//image.eveonline.com/Type/16275_32.png' style='width: 18px;height: 18px;'>
+                        <img src='{{ URL::asset('assets/img/bg.png') }}'
+                             data-src="//image.eveonline.com/Type/16275_32.png"
+                             data-src-retina="//image.eveonline.com/Type/16275_64.png"
+                             style='width: 18px;height: 18px;'>
                         <b>Strontium:</b> {{ ($details->strontium * 3) }} m3 / {{ $bay_sizes[$details->typeID]['strontBay'] }} m3
 
                       </td>
@@ -257,7 +269,10 @@
 
                                         <ul class="list-unstyled">
                                           <li>
-                                            <img src='//image.eveonline.com/Type/{{ $module_content['typeID'] }}_32.png' style='width: 18px;height: 18px;'>
+                                            <img src='{{ URL::asset('assets/img/bg.png') }}'
+                                                 data-src="//image.eveonline.com/Type/{{ $module_content['typeID'] }}_32.png"
+                                                 data-src-retina="//image.eveonline.com/Type/{{ $module_content['typeID'] }}_64.png"
+                                                 style='width: 18px;height: 18px;'>
                                             <b>{{ $module_group_name }}</b>
                                              @if(!is_null($module_content['module_name']))
                                               <span class="text-muted">(called {{ $module_content['module_name'] }})</span>
@@ -286,7 +301,10 @@
                                                 <tr>
                                                   <td>{{ $content_item['quantity'] }}</td>
                                                   <td>
-                                                    <img src='//image.eveonline.com/Type/{{ $content_item['typeID'] }}_32.png' style='width: 18px;height: 18px;'>
+                                                    <img src='{{ URL::asset('assets/img/bg.png') }}'
+                                                         data-src="//image.eveonline.com/Type/{{ $content_item['typeID'] }}_32.png"
+                                                         data-src-retina="//image.eveonline.com/Type/{{ $content_item['typeID'] }}_64.png"
+                                                         style='width: 18px;height: 18px;'>
                                                     {{ $content_item['name'] }}
                                                   </td>
                                                   <td>{{ round(( ($content_item['quantity'] * $content_item['volume']) / $module_content['used_volume']) * 100, 0) }}%</td>
@@ -358,7 +376,10 @@
 
                                         <ul class="list-unstyled">
                                           <li>
-                                            <img src='//image.eveonline.com/Type/{{ $module_content['typeID'] }}_32.png' style='width: 18px;height: 18px;'>
+                                            <img src='{{ URL::asset('assets/img/bg.png') }}'
+                                                 data-src="//image.eveonline.com/Type/{{ $module_content['typeID'] }}_32.png"
+                                                 data-src-retina="//image.eveonline.com/Type/{{ $module_content['typeID'] }}_64.png"
+                                                 style='width: 18px;height: 18px;'>
                                             <b>{{ $module_group_name }}</b>
                                              @if(!is_null($module_content['module_name']))
                                               <span class="text-muted">(called {{ $module_content['module_name'] }})</span>
@@ -387,7 +408,10 @@
                                                 <tr>
                                                   <td>{{ $content_item['quantity'] }}</td>
                                                   <td>
-                                                    <img src='//image.eveonline.com/Type/{{ $content_item['typeID'] }}_32.png' style='width: 18px;height: 18px;'>
+                                                    <img src='{{ URL::asset('assets/img/bg.png') }}'
+                                                         data-src="//image.eveonline.com/Type/{{ $content_item['typeID'] }}_32.png"
+                                                         data-src-retina="//image.eveonline.com/Type/{{ $content_item['typeID'] }}_64.png"
+                                                         style='width: 18px;height: 18px;'>
                                                     {{ $content_item['name'] }}
                                                   </td>
                                                   <td>{{ round(( ($content_item['quantity'] * $content_item['volume']) / $module_content['used_volume']) * 100, 0) }}%</td>
@@ -459,7 +483,10 @@
 
                                         <ul class="list-unstyled">
                                           <li>
-                                            <img src='//image.eveonline.com/Type/{{ $module_content['typeID'] }}_32.png' style='width: 18px;height: 18px;'>
+                                            <img src='{{ URL::asset('assets/img/bg.png') }}'
+                                                 data-src="//image.eveonline.com/Type/{{ $module_content['typeID'] }}_32.png"
+                                                 data-src-retina="//image.eveonline.com/Type/{{ $module_content['typeID'] }}_64.png"
+                                                 style='width: 18px;height: 18px;'>
                                             <b>{{ $module_group_name }}</b>
                                              @if(!is_null($module_content['module_name']))
                                               <span class="text-muted">(called {{ $module_content['module_name'] }})</span>
@@ -488,7 +515,10 @@
                                                 <tr>
                                                   <td>{{ $content_item['quantity'] }}</td>
                                                   <td>
-                                                    <img src='//image.eveonline.com/Type/{{ $content_item['typeID'] }}_32.png' style='width: 18px;height: 18px;'>
+                                                    <img src='{{ URL::asset('assets/img/bg.png') }}'
+                                                         data-src="//image.eveonline.com/Type/{{ $content_item['typeID'] }}_32.png"
+                                                         data-src-retina="//image.eveonline.com/Type/{{ $content_item['typeID'] }}_64.png"
+                                                         style='width: 18px;height: 18px;'>
                                                     {{ $content_item['name'] }}
                                                   </td>
                                                   <td>{{ round(( ($content_item['quantity'] * $content_item['volume']) / $module_content['used_volume']) * 100, 0) }}%</td>

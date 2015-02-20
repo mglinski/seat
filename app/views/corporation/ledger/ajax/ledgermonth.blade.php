@@ -132,7 +132,10 @@
                         <tr>
                           <td>
                             <a href="{{ action('CharacterController@getView', array('characterID' => $entry->ownerID2 )) }}">
-                              <img src='//image.eveonline.com/Character/{{ $entry->ownerID2 }}_32.jpg' class='img-circle' style='width: 18px;height: 18px;'>
+                              <img src='{{ URL::asset('assets/img/bg.png') }}'
+                                   data-src="//image.eveonline.com/Character/{{ $entry->ownerID2 }}_32.jpg"
+                                   data-src-retina="//image.eveonline.com/Character/{{ $entry->ownerID2 }}_64.jpg"
+                                   class='img-circle' style='width: 18px;height: 18px;'>
                               {{ $entry->ownerName2 }}
                             </a>
                           </td>
@@ -174,7 +177,10 @@
                       <tr>
                         <td>
                           <a href="{{ action('CharacterController@getView', array('characterID' => $entry->ownerID2 )) }}">
-                            <img src='//image.eveonline.com/Character/{{ $entry->ownerID2 }}_32.jpg' class='img-circle' style='width: 18px;height: 18px;'>
+                            <img src='{{ URL::asset('assets/img/bg.png') }}'
+                                 data-src="//image.eveonline.com/Character/{{ $entry->ownerID2 }}_32.jpg"
+                                 data-src-retina="//image.eveonline.com/Character/{{ $entry->ownerID2 }}_64.jpg"
+                                 class='img-circle' style='width: 18px;height: 18px;'>
                             {{ $entry->ownerName2 }}
                           </a>
                         </td>
@@ -217,7 +223,10 @@
                         <tr>
                           <td>
                             <a href="{{ action('CharacterController@getView', array('characterID' => $entry->ownerID2 )) }}">
-                              <img src='//image.eveonline.com/Character/{{ $entry->ownerID2 }}_32.jpg' class='img-circle' style='width: 18px;height: 18px;'>
+                              <img src='{{ URL::asset('assets/img/bg.png') }}'
+                                   data-src="//image.eveonline.com/Character/{{ $entry->ownerID2 }}_32.jpg"
+                                   data-src-retina="//image.eveonline.com/Character/{{ $entry->ownerID2 }}_64.jpg"
+                                   class='img-circle' style='width: 18px;height: 18px;'>
                               {{ $entry->ownerName2 }}
                             </a>
                           </td>
@@ -260,7 +269,10 @@
                       <tr>
                         <td>
                           <a href="{{ action('CharacterController@getView', array('characterID' => $entry->ownerID1 )) }}">
-                            <img src='//image.eveonline.com/Character/{{ $entry->ownerID1 }}_32.jpg' class='img-circle' style='width: 18px;height: 18px;'>
+                            <img src='{{ URL::asset('assets/img/bg.png') }}'
+                                 data-src="//image.eveonline.com/Character/{{ $entry->ownerID1 }}_32.jpg"
+                                 data-src-retina="//image.eveonline.com/Character/{{ $entry->ownerID1 }}_64.jpg"
+                                 class='img-circle' style='width: 18px;height: 18px;'>
                             {{ $entry->ownerName1 }}
                           </a>
                         </td>
