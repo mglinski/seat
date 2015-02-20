@@ -19,10 +19,7 @@
         <div class="box-body">
           <div class="row">
             <div class="col-md-3">
-              <img src='{{ URL::asset('assets/img/bg.png') }}'
-                      data-src="//image.eveonline.com/Character/{{ $character_info->characterID }}_256.jpg"
-                      data-src-retina="//image.eveonline.com/Character/{{ $character_info->characterID }}_512.jpg"
-                      class='img-circle pull-right'>
+                {{ Seat\services\helpers\Img::character($character_info->characterID, 32, array('class' => 'img-circle pull-right')) }}
             </div>
             <div class="col-md-4">
               <div class="box box-solid">
@@ -73,11 +70,8 @@
               @foreach($employment_history as $employment)
 
                 <li>
-                  <img src='{{ URL::asset('assets/img/bg.png') }}'
-                          data-src="//image.eveonline.com/Corporation/{{ $employment->corporationID }}_32.png"
-                          data-src-retina="//image.eveonline.com/Character/{{ $character_info->characterID }}_64.png"
-                          class='img-circle'>
-                  Joined <b><span rel="id-to-name">{{ $employment->corporationID }}</span></b> on {{ $employment->startDate }} ({{ Carbon\Carbon::parse($employment->startDate)->diffForHumans() }})
+                    {{ Seat\services\helpers\Img::corporation($employment->corporationID, 32, array('class' => 'img-circle', 'style' => 'width: 32px;height: 32px;', )) }}
+                    Joined <b><span rel="id-to-name">{{ $employment->corporationID }}</span></b> on {{ $employment->startDate }} ({{ Carbon\Carbon::parse($employment->startDate)->diffForHumans() }})
                 </li>
 
               @endforeach

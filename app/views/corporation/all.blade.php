@@ -30,26 +30,17 @@
 
                 <tr>
                   <td>
-                      <img src='{{ URL::asset('assets/img/bg.png') }}'
-                           data-src="//image.eveonline.com/Corporation/{{ $corporation->corporationID }}_32.png"
-                           data-src-retina="//image.eveonline.com/Corporation/{{ $corporation->corporationID }}_64.png"
-                           class='img-circle' style='width: 18px;height: 18px;'>
-                        {{ $corporation->corporationName }} [{{ $corporation->ticker }}]
+                      {{ Seat\services\helpers\Img::corporation($corporation->corporationID, 32, array('class' => 'img-circle', 'style' => 'width: 18px;height: 18px;', )) }}
+                      {{ $corporation->corporationName }} [{{ $corporation->ticker }}]
                   </td>
                   <td>
                     <a href="{{ action('CharacterController@getView', array('characterID' => $corporation->ceoID)) }}">
-                      <img src='{{ URL::asset('assets/img/bg.png') }}'
-                           data-src="//image.eveonline.com/Character/{{ $corporation->ceoID }}_32.jpg"
-                           data-src-retina="//image.eveonline.com/Character/{{ $corporation->ceoID }}_64.jpg"
-                           class='img-circle' style='width: 18px;height: 18px;'>
-                      {{ $corporation->ceoName }}
+                        {{ Seat\services\helpers\Img::character($corporation->ceoID, 32, array('class' => 'img-circle', 'style' => 'width: 18px;height: 18px;', )) }}
+                        {{ $corporation->ceoName }}
                     </a>
                   </td>
                   <td>
-                      <img src='{{ URL::asset('assets/img/bg.png') }}'
-                           data-src="//image.eveonline.com/Alliance/{{ $corporation->allianceID }}_32.png"
-                           data-src-retina="//image.eveonline.com/Alliance/{{ $corporation->allianceID }}_64.png"
-                           class='img-circle' style='width: 18px;height: 18px;'>
+                      {{ Seat\services\helpers\Img::alliance($corporation->allianceID, 32, array('class' => 'img-circle', 'style' => 'width: 18px;height: 18px;', )) }}
                       {{ $corporation->allianceName }}
                   </td>
                   <td>

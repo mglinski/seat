@@ -52,10 +52,7 @@
                                       <td>{{ App\Services\Helpers\Helpers::formatBigNumber($asset['quantity']) }}</td>
                                       <td colspan="2">
                                         <span data-toggle="tooltip" title="" data-original-title="{{ number_format($asset['quantity'], 0, $settings['decimal_seperator'], $settings['thousand_seperator']) }} x {{ $asset['typeName'] }}">
-                                          <img src='{{ URL::asset('assets/img/bg.png') }}'
-                                               data-src="//image.eveonline.com/Type/{{ $asset['typeID'] }}_32.png"
-                                               data-src-retina="//image.eveonline.com/Type/{{ $asset['typeID'] }}_64.png"
-                                               style='width: 18px;height: 18px;'>
+                                            {{ Seat\services\helpers\Img::type($asset['typeID'], 32, array('style' => 'width: 18px;height: 18px;', )) }}
                                           {{ str_limit($asset['typeName'], 35, $end = '...') }} {{ isset($asset['contents']) ? "(". count($asset['contents']) . ")" : "" }}
                                         </span>
                                       </td>
@@ -93,10 +90,7 @@
                                           <td style="width: 18px;"></td>
                                           <td>
                                             <span data-toggle="tooltip" title="" data-original-title="{{ number_format($content['quantity'], 0, $settings['decimal_seperator'], $settings['thousand_seperator']) }} x {{ $content['typeName'] }}">
-                                              <img src='{{ URL::asset('assets/img/bg.png') }}'
-                                                   data-src="//image.eveonline.com/Type/{{ $content['typeID'] }}_32.png"
-                                                   data-src-retina="//image.eveonline.com/Type/{{ $content['typeID'] }}_64.png"
-                                                   style='width: 18px;height: 18px;'>
+                                                {{ Seat\services\helpers\Img::type($content['typeID'], 32, array('style' => 'width: 18px;height: 18px;', )) }}
                                               {{ str_limit($content['typeName'], 30, $end = '...') }}
                                             </span>
                                           </td>
@@ -170,10 +164,7 @@
                                       <td>{{ App\Services\Helpers\Helpers::formatBigNumber($asset['quantity']) }}</td>
                                       <td colspan="2">
                                         <span data-toggle="tooltip" title="" data-original-title="{{ number_format($asset['quantity'], 0, $settings['decimal_seperator'], $settings['thousand_seperator']) }} x {{ $asset['typeName'] }}">
-                                          <img src='{{ URL::asset('assets/img/bg.png') }}'
-                                               data-src="//image.eveonline.com/Type/{{ $asset['typeID'] }}_32.png"
-                                               data-src-retina="//image.eveonline.com/Type/{{ $asset['typeID'] }}_64.png"
-                                               style='width: 18px;height: 18px;'>
+                                            {{ Seat\services\helpers\Img::type($asset['typeID'], 32, array('style' => 'width: 18px;height: 18px;', )) }}
                                           {{ str_limit($asset['typeName'], 35, $end = '...') }} {{ isset($asset['contents']) ? "(". count($asset['contents']) . ")" : "" }}
                                         </span>
                                       </td>
@@ -211,10 +202,7 @@
                                           <td style="width: 18px;"></td>
                                           <td>
                                             <span data-toggle="tooltip" title="" data-original-title="{{ number_format($content['quantity'], 0, $settings['decimal_seperator'], $settings['thousand_seperator']) }} x {{ $content['typeName'] }}">
-                                              <img src='{{ URL::asset('assets/img/bg.png') }}'
-                                                   data-src="//image.eveonline.com/Type/{{ $content['typeID'] }}_32.png"
-                                                   data-src-retina="//image.eveonline.com/Type/{{ $content['typeID'] }}_64.png"
-                                                   style='width: 18px;height: 18px;'>
+                                                {{ Seat\services\helpers\Img::type($content['typeID'], 32, array('style' => 'width: 18px;height: 18px;', )) }}
                                               {{ str_limit($content['typeName'], 30, $end = '...') }}
                                             </span>
                                           </td>

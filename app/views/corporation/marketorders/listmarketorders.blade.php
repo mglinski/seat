@@ -13,10 +13,7 @@
           <p>From character: {{ $corp->characterName }}</p>
         </div>
         <div class="icon">
-          <img src='{{ URL::asset('assets/img/bg.png') }}'
-               data-src="{{ App\Services\Helpers\Helpers::generateEveImage($corp->corporationID, 32) }}"
-               data-src-retina="{{ App\Services\Helpers\Helpers::generateEveImage($corp->corporationID, 64) }}"
-               class="img-circle" />
+            {{ Seat\services\helpers\Img::corporation($corp->corporationID, 32, array('class' => 'img-circle')) }}
         </div>
         <a href="{{ action('CorporationController@getMarketOrders', array('corporationID' => $corp->corporationID)) }}" class="small-box-footer">
           View Market Orders <i class="fa fa-arrow-circle-right"></i>

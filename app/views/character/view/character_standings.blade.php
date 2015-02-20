@@ -22,11 +22,8 @@
 
                   <tr>
                     <td>
-                      <img src='{{ URL::asset('assets/img/bg.png') }}'
-                           data-src="{{ App\Services\Helpers\Helpers::generateEveImage( $standing->fromID, 32) }}"
-                           data-src-retina="{{ App\Services\Helpers\Helpers::generateEveImage( $standing->fromID, 64) }}"
-                           class='img-circle' style='width: 18px;height: 18px;'>
-                      {{ $standing->fromName }}
+                        {{ Seat\services\helpers\Img::html($standing->fromID, 32, array('class' => 'img-circle', 'style' => 'width: 18px;height: 18px;', )) }}
+                        {{ $standing->fromName }}
                     </td>
                     <td>{{ $standing->standing }}</td>
                   </tr>
@@ -50,11 +47,8 @@
 
                   <tr>
                     <td>
-                      <img src='{{ URL::asset('assets/img/bg.png') }}'
-                           data-src="{{ App\Services\Helpers\Helpers::generateEveImage( $standing->fromID, 32) }}"
-                           data-src-retina="{{ App\Services\Helpers\Helpers::generateEveImage( $standing->fromID, 64) }}"
-                           class='img-circle' style='width: 18px;height: 18px;'>
-                      {{ $standing->fromName }}
+                        {{ Seat\services\helpers\Img::html($standing->fromID, 32, array('class' => 'img-circle', 'style' => 'width: 18px;height: 18px;', )) }}
+                        {{ $standing->fromName }}
                     </td>
                     <td>{{ $standing->standing }}</td>
                   </tr>
@@ -78,11 +72,8 @@
 
                   <tr>
                     <td>
-                      <img src='{{ URL::asset('assets/img/bg.png') }}'
-                           data-src="{{ App\Services\Helpers\Helpers::generateEveImage( $standing->fromID, 32) }}"
-                           data-src-retina="{{ App\Services\Helpers\Helpers::generateEveImage( $standing->fromID, 64) }}"
-                           class='img-circle' style='width: 18px;height: 18px;'>
-                      {{ $standing->fromName }}
+                        {{ Seat\services\helpers\Img::html($standing->fromID, 32, array('class' => 'img-circle', 'style' => 'width: 18px;height: 18px;', )) }}
+                        {{ $standing->fromName }}
                     </td>
                     <td>{{ $standing->standing }}</td>
                   </tr>

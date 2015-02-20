@@ -71,19 +71,19 @@
                             </div>
                           </div>
                         </td>
-                        <td><img src='{{ URL::asset('assets/img/bg.png') }}'
-                                 data-src="//image.eveonline.com/Character/{{ $job->installerID }}_32.jpg"
-                                 data-src-retina="//image.eveonline.com/Character/{{ $job->installerID }}_64.jpg"
-                                 class='img-circle' /> {{ $job->installerName }}</td>
+                        <td>
+                            {{ Seat\services\helpers\Img::character($job->installerID, 32, array('class' => 'img-circle')) }}
+                            {{ $job->installerName }}
+                        </td>
                         <td>{{ $job->runs }}</td>
-                        <td><img src='{{ URL::asset('assets/img/bg.png') }}'
-                                 data-src="//image.eveonline.com/Type/{{ $job->blueprintTypeID }}_32.png"
-                                 data-src-retina="//image.eveonline.com/Type/{{ $job->blueprintTypeID }}_64.png"
-                                    /> {{ $job->blueprintTypeName }}</td>
-                        <td><img src='{{ URL::asset('assets/img/bg.png') }}'
-                                 data-src="//image.eveonline.com/Type/{{ $job->productTypeID }}_32.png"
-                                 data-src-retina="//image.eveonline.com/Type/{{ $job->productTypeID }}_64.png"
-                                    /> {{ $job->productTypeName }}</td>
+                        <td>
+                            {{ Seat\services\helpers\Img::type($job->blueprintTypeID, 32, array('style' => 'width: 18px;height: 18px;')) }}
+                            {{ $job->blueprintTypeName }}
+                        </td>
+                        <td>
+                            {{ Seat\services\helpers\Img::type($job->productTypeID, 32, array('style' => 'width: 18px;height: 18px;')) }}
+                            {{ $job->productTypeName }}
+                        </td>
                         <td>{{ $job->location }}</td>
                       </tr>
 
@@ -133,19 +133,19 @@
                             <span class="label bg-aqua">Invention</span>
                           @endif
                         </td>
-                        <td><img src='{{ URL::asset('assets/img/bg.png') }}'
-                                 data-src="//image.eveonline.com/Character/{{ $job->installerID }}_32.jpg"
-                                 data-src-retina="//image.eveonline.com/Character/{{ $job->installerID }}_64.jpg"
-                                    /> {{ $job->installerName }}</td>
+                        <td>
+                            {{ Seat\services\helpers\Img::character($job->installerID, 32, array('class' => 'img-circle')) }}
+                            {{ $job->installerName }}
+                        </td>
                         <td>{{ $job->runs }}</td>
-                        <td><img src='{{ URL::asset('assets/img/bg.png') }}'
-                                 data-src="//image.eveonline.com/Type/{{ $job->blueprintTypeID }}_32.png"
-                                 data-src-retina="//image.eveonline.com/Type/{{ $job->blueprintTypeID }}_64.png"
-                                    /> {{ $job->blueprintTypeName }}</td>
-                        <td><img src='{{ URL::asset('assets/img/bg.png') }}'
-                                 data-src="//image.eveonline.com/Type/{{ $job->productTypeID }}_32.png"
-                                 data-src-retina="//image.eveonline.com/Type/{{ $job->productTypeID }}_64.png"
-                                    /> {{ $job->productTypeName }}</td>
+                        <td>
+                            {{ Seat\services\helpers\Img::type($job->blueprintTypeID, 32, array('style' => 'width: 18px;height: 18px;', )) }}
+                            {{ $job->blueprintTypeName }}
+                        </td>
+                        <td>
+                            {{ Seat\services\helpers\Img::type($job->productTypeID, 32, array('style' => 'width: 18px;height: 18px;', )) }}
+                            {{ $job->productTypeName }}
+                        </td>
                         <td>{{ $job->location }}</td>
                       </tr>
 

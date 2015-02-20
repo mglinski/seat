@@ -13,10 +13,7 @@
       <div class="box box-primary">
         <div class="box-body">
           <p class="text-center">
-            <img src='{{ URL::asset('assets/img/bg.png') }}'
-                    data-src="//image.eveonline.com/Character/{{ $character->characterID }}_256.jpg"
-                    data-src-retina="//image.eveonline.com/Character/{{ $character->characterID }}_512.jpg"
-                    class='img-circle'>
+              {{ Seat\services\helpers\Img::character($character->characterID, 256, array('class' => 'img-circle', 'style' => 'width: 256px;height: 256px;', )) }}
           </p>
           <p class="text-center lead">{{ $character->characterName }}</p>
         </div><!-- /.box-body -->
@@ -52,10 +49,7 @@
               <div class="row">
                 <a href="{{ action('CharacterController@getView', array('characterID' => $alt->characterID )) }}" style="color:inherit;">
                   <div class="col-md-4">
-                    <img src='{{ URL::asset('assets/img/bg.png') }}'
-                         data-src="//image.eveonline.com/Character/{{ $alt->characterID }}_64.jpg"
-                         data-src-retina="//image.eveonline.com/Character/{{ $alt->characterID }}_128.jpg"
-                         class="img-circle">
+                      {{ Seat\services\helpers\Img::character($alt->characterID, 64, array('class' => 'img-circle', 'style' => 'width: 64px;height: 64px;', )) }}
                   </div>
                   <div class="col-md-8">
                     <ul class="list-unstyled">
@@ -96,11 +90,8 @@
                     @foreach ($other_alts as $person)
                       <li>
                         <a href="{{ action('CharacterController@getView', array('characterID' => $person->characterID)) }}">
-                          <img src='{{ URL::asset('assets/img/bg.png') }}'
-                                  data-src="//image.eveonline.com/Character/{{ $person->characterID }}_32.jpg"
-                                  data-src-retina="//image.eveonline.com/Character/{{ $person->characterID }}_64.jpg"
-                                  class='img-circle' style='width: 18px;height: 18px;'>
-                          {{ $person->characterName }}
+                            {{ Seat\services\helpers\Img::character($person->characterID, 32, array('class' => 'img-circle', 'style' => 'width: 18px;height: 18px;', )) }}
+                            {{ $person->characterName }}
                         </a>
                       </li>
                     @endforeach

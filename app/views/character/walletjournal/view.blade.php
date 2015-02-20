@@ -12,10 +12,7 @@
           <h3 class="box-title">
             Wallet Journal for:
             <a href="{{ action('CharacterController@getView', array('characterID' => $characterID)) }}">
-              <img src='{{ URL::asset('assets/img/bg.png') }}'
-                   data-src="//image.eveonline.com/Character/{{ $characterID }}_32.jpg"
-                   data-src-retina="//image.eveonline.com/Character/{{ $characterID }}_64.jpg"
-                   class='img-circle' style='width: 18px;height: 18px;'>
+                {{ Seat\services\helpers\Img::character($characterID, 32, array('class' => 'img-circle', 'style' => 'width: 18px;height: 18px;', )) }}
             </a>
             {{ $character_name }}
           </h3>
@@ -50,18 +47,12 @@
                   </td>
                   <td>{{ $e->refTypeName }}</td>
                   <td>
-                    <img src='{{ URL::asset('assets/img/bg.png') }}'
-                         data-src="{{ App\Services\Helpers\Helpers::generateEveImage($e->ownerID1, 32) }}"
-                         data-src-retina="{{ App\Services\Helpers\Helpers::generateEveImage($e->ownerID1, 64) }}"
-                         class='img-circle' style='width: 18px;height: 18px;'>
-                    {{ $e->ownerName1 }}
+                      {{ Seat\services\helpers\Img::html($e->ownerID1, 32, array('class' => 'img-circle', 'style' => 'width: 18px;height: 18px;', )) }}
+                      {{ $e->ownerName1 }}
                   </td>
                   <td>
-                    <img src='{{ URL::asset('assets/img/bg.png') }}'
-                         data-src="{{ App\Services\Helpers\Helpers::generateEveImage($e->ownerID2, 32) }}"
-                         data-src-retina="{{ App\Services\Helpers\Helpers::generateEveImage($e->ownerID2, 64) }}"
-                         class='img-circle' style='width: 18px;height: 18px;'>
-                    {{ $e->ownerName2 }}
+                      {{ Seat\services\helpers\Img::html($e->ownerID2, 32, array('class' => 'img-circle', 'style' => 'width: 18px;height: 18px;', )) }}
+                      {{ $e->ownerName2 }}
                   </td>
                   <td>{{ $e->argName1 }}</td>
                   <td data-sort="{{ $e->amount }}">

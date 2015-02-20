@@ -87,10 +87,7 @@
               <div class="row">
                 <div class="col-md-4">
                   <a href="{{ action('CharacterController@getView', array('characterID' => $character->characterID )) }}">
-                    <img src='{{ URL::asset('assets/img/bg.png') }}'
-                         data-src="//image.eveonline.com/Character/{{ $character->characterID }}_64.jpg"
-                         data-src-retina="//image.eveonline.com/Character/{{ $character->characterID }}_128.jpg"
-                         class="img-circle pull-right">
+                      {{ Seat\services\helpers\Img::character($character->characterID, 64, array('class' => 'img-circle pull-right')) }}
                   </a>
                 </div>
                 <div class="col-md-8">
