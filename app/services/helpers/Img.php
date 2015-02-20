@@ -99,7 +99,7 @@ class Img {
 	 * @return string
 	 */
 	public static function alliance($id, $size, $attrs) {
-		return self::_renderHtml($id, $size, self::Character, $attrs);
+		return self::_renderHtml($id, $size, self::Alliance, $attrs);
 	}
 
 	/**
@@ -164,20 +164,20 @@ class Img {
 		// construct ending bit of URL
 		switch ($type) {
 			case self::Corporation:
-				$url .= '/' . self::$types[self::Corporation] . '/' . $id . '_' . $size . '.png';
+				$url .= self::$types[self::Corporation] . '/' . $id . '_' . $size . '.png';
 				break;
 
 			case self::Alliance:
-				$url .= '/' . self::$types[self::Alliance] . '/' . $id . '_' . $size . '.png';
+				$url .= self::$types[self::Alliance] . '/' . $id . '_' . $size . '.png';
 				break;
 
 			case self::Type:
-				$url .= '/' . self::$types[self::Type] . '/' . $id . '_' . $size . '.png';
+				$url .= self::$types[self::Type] . '/' . $id . '_' . $size . '.png';
 				break;
 
 			case self::Character:
 			default:
-				$url .= '/' . self::$types[self::Character] . '/' . $id . '_' . $size . '.jpg';
+				$url .= self::$types[self::Character] . '/' . $id . '_' . $size . '.jpg';
 		}
 
 		// return full URL
