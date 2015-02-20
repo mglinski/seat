@@ -87,7 +87,7 @@ class Img {
 	 * @return string
 	 */
 	public static function corporation($id, $size, $attrs) {
-		return self::_renderHtml($id, $size, self::Character, $attrs);
+		return self::_renderHtml($id, $size, self::Corporation, $attrs);
 	}
 
 	/**
