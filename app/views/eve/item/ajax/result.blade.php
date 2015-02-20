@@ -16,10 +16,9 @@
       @foreach ($items as $result)
 
         <tr>
-          <td><img src='{{ URL::asset('assets/img/bg.png') }}'
-                   data-src="//image.eveonline.com/Type/{{ $result->typeID }}_32.png"
-                   data-src-retina="//image.eveonline.com/Type/{{ $result->typeID }}_64.png"
-                   style='width: 18px;height: 18px;'></td>
+          <td>
+              {{ Seat\services\helpers\Img::type($result->typeID, 32, array('style' => 'width: 18px;height: 18px;', )) }}
+          </td>
           <td>{{ $result->typeID }}</td>
           <td>{{ $result->typeName }}</td>
           <td>{{ $result->description }}</td>

@@ -13,11 +13,7 @@
           <p>From character: {{ $corp->characterName }}</p>
         </div>
         <div class="icon">
-          <img src='{{ URL::asset('assets/img/bg.png') }}'
-               data-src="{{ App\Services\Helpers\Helpers::generateEveImage($corp->corporationID, 32) }}"
-               data-src-retina="{{ App\Services\Helpers\Helpers::generateEveImage($corp->corporationID, 64) }}"
-
-               class="img-circle" />
+            {{ Seat\services\helpers\Img::corporation($corp->corporationID, 32, array('class' => 'img-circle', 'style' => 'width: 18px;height: 18px;', )) }}
         </div>
         <a href="{{ action('CorporationController@getCustomsOffices', array('corporationID' => $corp->corporationID)) }}" class="small-box-footer">
           View Corporation Customs Offices <i class="fa fa-arrow-circle-right"></i>

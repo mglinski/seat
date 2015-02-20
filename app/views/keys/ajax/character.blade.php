@@ -87,10 +87,7 @@
 
       <div class="row">
         <div class="col-md-2">
-          <img src='{{ URL::asset('assets/img/bg.png') }}'
-               data-src="//image.eveonline.com/Character/{{ $character->characterID }}_128.jpg"
-               data-src-retina="//image.eveonline.com/Character/{{ $character->characterID }}_256.jpg"
-               class='img-thumbnail'>
+            {{ Seat\services\helpers\Img::character($character->characterID, 128, array('class' => 'img-thumbnail')) }}
         </div>
         <div class="col-md-6">
           <blockquote>

@@ -132,11 +132,8 @@
                         <tr>
                           <td>
                             <a href="{{ action('CharacterController@getView', array('characterID' => $entry->ownerID2 )) }}">
-                              <img src='{{ URL::asset('assets/img/bg.png') }}'
-                                   data-src="//image.eveonline.com/Character/{{ $entry->ownerID2 }}_32.jpg"
-                                   data-src-retina="//image.eveonline.com/Character/{{ $entry->ownerID2 }}_64.jpg"
-                                   class='img-circle' style='width: 18px;height: 18px;'>
-                              {{ $entry->ownerName2 }}
+                                {{ Seat\services\helpers\Img::character($entry->ownerID2, 32, array('class' => 'img-circle', 'style' => 'width: 18px;height: 18px;', )) }}
+                                {{ $entry->ownerName2 }}
                             </a>
                           </td>
                           <td> <b> {{ number_format($entry->total, 2, $settings['decimal_seperator'], $settings['thousand_seperator']) }} ISK </b> </td>
@@ -177,11 +174,8 @@
                       <tr>
                         <td>
                           <a href="{{ action('CharacterController@getView', array('characterID' => $entry->ownerID2 )) }}">
-                            <img src='{{ URL::asset('assets/img/bg.png') }}'
-                                 data-src="//image.eveonline.com/Character/{{ $entry->ownerID2 }}_32.jpg"
-                                 data-src-retina="//image.eveonline.com/Character/{{ $entry->ownerID2 }}_64.jpg"
-                                 class='img-circle' style='width: 18px;height: 18px;'>
-                            {{ $entry->ownerName2 }}
+                              {{ Seat\services\helpers\Img::character($entry->ownerID2, 32, array('class' => 'img-circle', 'style' => 'width: 18px;height: 18px;', )) }}
+                              {{ $entry->ownerName2 }}
                           </a>
                         </td>
                         <td> <b> {{ number_format($entry->total, 2, $settings['decimal_seperator'], $settings['thousand_seperator']) }} ISK </b> </td>
@@ -223,11 +217,8 @@
                         <tr>
                           <td>
                             <a href="{{ action('CharacterController@getView', array('characterID' => $entry->ownerID2 )) }}">
-                              <img src='{{ URL::asset('assets/img/bg.png') }}'
-                                   data-src="//image.eveonline.com/Character/{{ $entry->ownerID2 }}_32.jpg"
-                                   data-src-retina="//image.eveonline.com/Character/{{ $entry->ownerID2 }}_64.jpg"
-                                   class='img-circle' style='width: 18px;height: 18px;'>
-                              {{ $entry->ownerName2 }}
+                                {{ Seat\services\helpers\Img::character($entry->ownerID2, 32, array('class' => 'img-circle', 'style' => 'width: 18px;height: 18px;', )) }}
+                                {{ $entry->ownerName2 }}
                             </a>
                           </td>
                           <td> <b> {{ number_format($entry->total, 2, $settings['decimal_seperator'], $settings['thousand_seperator']) }} ISK </b> </td>
@@ -269,11 +260,8 @@
                       <tr>
                         <td>
                           <a href="{{ action('CharacterController@getView', array('characterID' => $entry->ownerID1 )) }}">
-                            <img src='{{ URL::asset('assets/img/bg.png') }}'
-                                 data-src="//image.eveonline.com/Character/{{ $entry->ownerID1 }}_32.jpg"
-                                 data-src-retina="//image.eveonline.com/Character/{{ $entry->ownerID1 }}_64.jpg"
-                                 class='img-circle' style='width: 18px;height: 18px;'>
-                            {{ $entry->ownerName1 }}
+                              {{ Seat\services\helpers\Img::character($entry->ownerID1, 32, array('class' => 'img-circle', 'style' => 'width: 18px;height: 18px;', )) }}
+                              {{ $entry->ownerName1 }}
                           </a>
                         </td>
                         <td> <b> {{ number_format($entry->total, 2, $settings['decimal_seperator'], $settings['thousand_seperator']) }} ISK </b> </td>

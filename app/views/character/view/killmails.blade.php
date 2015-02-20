@@ -27,10 +27,7 @@
                     <tr>
                       <td>
                         <a href="{{ action('CharacterController@getView', array('characterID' => $killmail->characterID)) }}">
-                          <img src='{{ URL::asset('assets/img/bg.png') }}'
-                               data-src="//image.eveonline.com/Character/{{ $killmail->characterID }}_32.jpg"
-                               data-src-retina="//image.eveonline.com/Character/{{ $killmail->characterID }}_64.jpg"
-                               class='img-circle' style='width: 18px;height: 18px;'>
+                          {{ Seat\services\helpers\Img::character($killmail->characterID, 32, array('class' => 'img-circle', 'style' => 'width: 18px;height: 18px;', )) }}
                           {{ $killmail->characterName }}
                           {{-- if the characterID == victim characterID, then this is a loss --}}
                           @if($killmail->characterID == $characterID)
@@ -40,10 +37,7 @@
                       </td>
                       <td>
                         <a href="https://zkillboard.com/kill/{{ $killmail->killID }}/" target="_blank">
-                          <img src='{{ URL::asset('assets/img/bg.png') }}'
-                               data-src="//image.eveonline.com/Type/{{ $killmail->shipTypeID }}_32.png"
-                               data-src-retina="//image.eveonline.com/Type/{{ $killmail->shipTypeID }}_32.png"
-                               class='img-circle' style='width: 18px;height: 18px;'>
+                          {{ Seat\services\helpers\Img::type($killmail->shipTypeID, 32, array('class' => 'img-circle', 'style' => 'width: 18px;height: 18px;', )) }}
                           {{ $killmail->typeName }}
                         </a>
                       </td>

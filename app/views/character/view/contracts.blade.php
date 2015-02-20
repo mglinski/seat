@@ -40,18 +40,12 @@
                         <tbody style="border-top:0px solid #FFF">
                           <tr class="item-container">
                             <td style="width: 200px">
-                              <img src='{{ URL::asset('assets/img/bg.png') }}'
-                                   data-src="{{ App\Services\Helpers\Helpers::generateEveImage($contract['issuerID'], 32) }}"
-                                   data-src-retina="{{ App\Services\Helpers\Helpers::generateEveImage($contract['issuerID'], 64) }}"
-                                   class='img-circle' style='width: 18px;height: 18px;'>
-                              <span rel="id-to-name">{{ $contract['issuerID'] }}</span>
+                                {{ Seat\services\helpers\Img::html($contract['issuerID'], 32, array('class' => 'img-circle', 'style' => 'width: 18px;height: 18px;', )) }}
+                                <span rel="id-to-name">{{ $contract['issuerID'] }}</span>
                             </td>
                             <td style="width: 200px">
                               @if ($contract['assigneeID'] <> 0)
-                                <img src='{{ URL::asset('assets/img/bg.png') }}'
-                                     data-src="{{ App\Services\Helpers\Helpers::generateEveImage($contract['assigneeID'], 32) }}"
-                                     data-src-retina="{{ App\Services\Helpers\Helpers::generateEveImage($contract['assigneeID'], 64) }}"
-                                     class='img-circle' style='width: 18px;height: 18px;'>
+                                {{ Seat\services\helpers\Img::html($contract['assigneeID'], 32, array('class' => 'img-circle', 'style' => 'width: 18px;height: 18px;', )) }}
                                 <span rel="id-to-name">{{ $contract['assigneeID'] }}</span>
                               @else
                                 Unknown Assignee
@@ -107,10 +101,8 @@
                             <li>
                               <i class="fa fa-clock-o" data-original-title=" {{ $contract['dateCompleted'] }}" title="" data-toggle="tooltip"></i>
                               Completed: <b>{{ Carbon\Carbon::parse($contract['dateCompleted'])->diffForHumans() }}</b>
-                              by <img src='{{ URL::asset('assets/img/bg.png') }}'
-                                      data-src="{{ App\Services\Helpers\Helpers::generateEveImage($contract['acceptorID'], 32) }}"
-                                      data-src-retina="{{ App\Services\Helpers\Helpers::generateEveImage($contract['acceptorID'], 64) }}"
-                                      class='img-circle' style='width: 18px;height: 18px;'>
+                              by
+                                {{ Seat\services\helpers\Img::html($contract['acceptorID'], 32, array('class' => 'img-circle', 'style' => 'width: 18px;height: 18px;', )) }}
                               <b><span rel="id-to-name">{{ $contract['acceptorID'] }}</span></b>
                             </li>
                           @endif
@@ -147,10 +139,7 @@
                                     <li style="list-style:none;">
                                       {{-- Check if it's a item request or not --}}
                                       @if($content['included'] == 1)
-                                        <img src='{{ URL::asset('assets/img/bg.png') }}'
-                                             data-src="//image.eveonline.com/Type/{{ $content['typeID'] }}_32.png"
-                                             data-src-retina="//image.eveonline.com/Type/{{ $content['typeID'] }}_64.png"
-                                             style='width: 18px;height: 18px;'>
+                                            {{ Seat\services\helpers\Img::type($content['typeID'], 32, array('style' => 'width: 18px;height: 18px;', )) }}
                                         <span>{{  number_format($content['quantity'], 0, $settings['decimal_seperator'], $settings['thousand_seperator']) }} x {{ $content['typeName'] }}</span>
                                       @endif
                                     </li>
@@ -170,10 +159,7 @@
                                     <li style="list-style:none;">
                                       {{-- Check if it's a item request or not --}}
                                       @if($content['included'] == 0)
-                                      <img src='{{ URL::asset('assets/img/bg.png') }}'
-                                           data-src="//image.eveonline.com/Type/{{ $content['typeID'] }}_32.png"
-                                           data-src-retina="//image.eveonline.com/Type/{{ $content['typeID'] }}_64.png"
-                                           style='width: 18px;height: 18px;'>
+                                            {{ Seat\services\helpers\Img::type($content['typeID'], 32, array('style' => 'width: 18px;height: 18px;', )) }}
                                       <span>{{  number_format($content['quantity'], 0, $settings['decimal_seperator'], $settings['thousand_seperator']) }} x {{ $content['typeName'] }}</span>
                                       @endif
                                     </li>
@@ -227,18 +213,12 @@
                         <tbody style="border-top:0px solid #FFF">
                           <tr class="item-container">
                             <td style="width: 200px">
-                              <img src='{{ URL::asset('assets/img/bg.png') }}'
-                                   data-src="{{ App\Services\Helpers\Helpers::generateEveImage($contract['issuerID'], 32) }}"
-                                   data-src-retina="{{ App\Services\Helpers\Helpers::generateEveImage($contract['issuerID'], 64) }}"
-                                   class='img-circle' style='width: 18px;height: 18px;'>
+                                {{ Seat\services\helpers\Img::html($contract['issuerID'], 32, array('class' => 'img-circle', 'style' => 'width: 18px;height: 18px;', )) }}
                               <span rel="id-to-name">{{ $contract['issuerID'] }}</span>
                             </td>
                             <td style="width: 200px">
                               @if ($contract['assigneeID'] <> 0)
-                                <img src='{{ URL::asset('assets/img/bg.png') }}'
-                                     data-src="{{ App\Services\Helpers\Helpers::generateEveImage($contract['assigneeID'], 32) }}"
-                                     data-src-retina="{{ App\Services\Helpers\Helpers::generateEveImage($contract['assigneeID'], 64) }}"
-                                     class='img-circle' style='width: 18px;height: 18px;'>
+                                    {{ Seat\services\helpers\Img::html($contract['assigneeID'], 32, array('class' => 'img-circle', 'style' => 'width: 18px;height: 18px;', )) }}
                                 <span rel="id-to-name">{{ $contract['assigneeID'] }}</span>
                               @else
                                 Unknown Assignee
@@ -299,10 +279,8 @@
                             <li>
                               <i class="fa fa-clock-o" data-original-title=" {{ $contract['dateAccepted'] }}" title="" data-toggle="tooltip"></i>
                               Accepted: <b>{{ Carbon\Carbon::parse($contract['dateAccepted'])->diffForHumans() }}</b>
-                              by <img src='{{ URL::asset('assets/img/bg.png') }}'
-                                      data-src="{{ App\Services\Helpers\Helpers::generateEveImage($contract['acceptorID'], 32) }}"
-                                      data-src-retina="{{ App\Services\Helpers\Helpers::generateEveImage($contract['acceptorID'], 64) }}"
-                                      class='img-circle' style='width: 18px;height: 18px;'>
+                              by
+                                {{ Seat\services\helpers\Img::character($contract['acceptorID'], 32, array('class' => 'img-circle', 'style' => 'width: 18px;height: 18px;', )) }}
                               <b><span rel="id-to-name">{{ $contract['acceptorID'] }}</span></b>
                             </li>
                           @endif

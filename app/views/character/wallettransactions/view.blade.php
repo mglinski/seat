@@ -12,10 +12,7 @@
           <h3 class="box-title">
             Wallet Transactions for:
             <a href="{{ action('CharacterController@getView', array('characterID' => $characterID)) }}">
-              <img src='{{ URL::asset('assets/img/bg.png') }}'
-                   data-src="//image.eveonline.com/Character/{{ $characterID }}_32.jpg"
-                   data-src-retina="//image.eveonline.com/Character/{{ $characterID }}_64.jpg"
-                   class='img-circle' style='width: 18px;height: 18px;'>
+                {{ Seat\services\helpers\Img::character($characterID, 32, array('class' => 'img-circle', 'style' => 'width: 18px;height: 18px;', )) }}
             </a>
             {{ $character_name }}
           </h3>
@@ -50,11 +47,8 @@
                     </span>
                   </td>
                   <td>
-                    <img src='{{ URL::asset('assets/img/bg.png') }}'
-                         data-src="//image.eveonline.com/Type/{{ $e->typeID }}_32.png"
-                         data-src-retina="//image.eveonline.com/Type/{{ $e->typeID }}_64.png"
-                         style='width: 18px;height: 18px;'>
-                    {{ $e->typeName }}
+                      {{ Seat\services\helpers\Img::type($e->typeID, 32, array('style' => 'width: 18px;height: 18px;')) }}
+                      {{ $e->typeName }}
                   </td>
                   <td>{{ $e->quantity }}</td>
                   <td data-sort="{{ $e->price }}">

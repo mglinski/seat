@@ -35,10 +35,7 @@
                   </span>
                 </td>
                 <td>
-                  <img src='{{ URL::asset('assets/img/bg.png') }}'
-                       data-src="//image.eveonline.com/Type/{{ $e->typeID }}_32.png"
-                       data-src-retina="//image.eveonline.com/Type/{{ $e->typeID }}_64.png"
-                       style='width: 18px;height: 18px;'>
+                    {{ Seat\services\helpers\Img::type($e->typeID, 32, array('style' => 'width: 18px;height: 18px;', )) }}
                   {{ $e->typeName }}
                 </td>
                 <td>{{ $e->quantity }}</td>
