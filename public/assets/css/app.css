@@ -587,10 +587,6 @@ body > .header .logo .icon {
 .user-panel:after {
   clear: both;
 }
-.user-panel > .image > img {
-  width: 45px;
-  height: 45px;
-}
 .user-panel > .info {
   font-weight: 600;
   padding: 5px 5px 5px 15px;
