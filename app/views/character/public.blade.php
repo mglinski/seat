@@ -19,7 +19,7 @@
         <div class="box-body">
           <div class="row">
             <div class="col-md-3">
-                {{ Seat\services\helpers\Img::character($character_info->characterID, 32, array('class' => 'img-circle pull-right eveIcon medium')) }}
+                {{ Seat\services\helpers\Img::character($character_info->characterID, 128, array('class' => 'img-circle pull-right eveIcon xlarge')) }}
             </div>
             <div class="col-md-4">
               <div class="box box-solid">
