@@ -17,15 +17,14 @@
         retina = window.devicePixelRatio > 1,
         attrib = retina? "data-src-retina" : "data-src",
         images = this,
-        _className = "_unveiled",
+	    loadedClassName = "img-unveiled",
         loaded;
 
     this.one("unveil", function() {
       var source = this.getAttribute(attrib);
       source = source || this.getAttribute("data-src");
       if (source) {
-        this.setAttribute("src", source);
-        this.addClass(_className);
+        this.addClass(loadedClassName).setAttribute("src", source);
         if (typeof callback === "function") callback.call(this);
       }
     });
@@ -33,7 +32,7 @@
     function unveil() {
       var inview = images.filter(function() {
         var $e = $(this);
-        if ($e.is(":hidden") || $e.hasClass(_className)) return;
+        if ($e.is(":hidden") || $e.hasClass(loadedClassName)) return;
 
         var wt = $w.scrollTop(),
             wb = wt + $w.height(),

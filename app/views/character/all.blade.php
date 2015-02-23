@@ -31,7 +31,7 @@
                 <tr>
                   <td>
                     <a href="{{ action('CharacterController@getView', array('characterID' => $character->characterID)) }}">
-                        {{ Seat\services\helpers\Img::character($character->characterID, 32, array('class' => 'img-circle eveIcon medium')) }}
+                        {{ Seat\services\helpers\Img::character($character->characterID, 32, array('class' => 'img-circle eveIcon small')) }}
                         {{ $character->characterName }}
                     </a>
                   </td>
