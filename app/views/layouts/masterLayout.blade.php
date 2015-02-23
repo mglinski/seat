@@ -90,7 +90,8 @@
     <script src="//cdn.datatables.net/1.10.4/js/jquery.dataTables.min.js"></script>
     <!-- select2 -->
     <script src="{{ URL::asset('assets/js/select2.min.js') }}" type="text/javascript"></script>
-
+    <!-- slimscroll -->
+    <script src="{{ URL::asset('assets/js/jquery.slimscroll.min.js') }}" type="text/javascript"></script>
     <!--LazyLoadImages-->
     <script src="{{ URL::asset('assets/js/jquery.unveil.js') }}" type="text/javascript"></script>
     <!-- app -->
