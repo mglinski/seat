@@ -129,7 +129,12 @@ class Img {
 	 * @return string
 	 */
 	public static function type($id, $size, $attrs) {
-		return self::_renderHtml($id, $size, self::Type, $attrs);
+		if ($size < 32) {
+			return self::_renderHtml($id, 32, self::Type, $attrs, 32);
+		}
+		else {
+			return self::_renderHtml($id, $size, self::Type, $attrs);
+		}
 	}
 
 	/**
