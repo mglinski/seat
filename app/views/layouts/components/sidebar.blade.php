@@ -7,9 +7,9 @@
       <div class="pull-left image">
         {{-- See SettingHelper why this has to be more than 1 --}}
         @if($settings['main_character_id'] > 1)
-              {{ Seat\services\helpers\Img::character($settings['main_character_id'], 32, array('class' => 'img-circle', 'alt' => 'User Image', )) }}
+              {{ Seat\services\helpers\Img::character($settings['main_character_id'], 16, array('class' => 'img-circle eveIcon small')) }}
           @else
-              {{ Seat\services\helpers\Img::character('1', 32, array('class' => 'img-circle', 'alt' => 'User Image', )) }}
+              {{ Seat\services\helpers\Img::character('1', 16, array('class' => 'img-circle eveIcon small')) }}
           @endif
       </div>
       <div class="pull-left info">

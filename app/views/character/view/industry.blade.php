@@ -64,16 +64,16 @@
                         </div>
                       </td>
                       <td>
-                          {{ Seat\services\helpers\Img::character($job->installerID, 32, array('class' => 'img-circle', 'style' => 'width: 18px;height: 18px;', )) }}
+                          {{ Seat\services\helpers\Img::character($job->installerID, 16, array('class' => 'img-circle eveIcon small')) }}
                           {{ $job->installerName }}
                       </td>
                       <td>{{ $job->runs }}</td>
                       <td>
-                          {{ Seat\services\helpers\Img::type($job->blueprintTypeID, 32, array('style' => 'width: 18px;height: 18px;', )) }}
+                          {{ Seat\services\helpers\Img::type($job->blueprintTypeID, 16, array('class' => 'eveIcon small')) }}
                           {{ $job->blueprintTypeName }}
                       </td>
                       <td>
-                          {{ Seat\services\helpers\Img::type($job->productTypeID, 32, array('style' => 'width: 18px;height: 18px;', )) }}
+                          {{ Seat\services\helpers\Img::type($job->productTypeID, 16, array('class' => 'eveIcon small')) }}
                           {{ $job->productTypeName }}
                       </td>
                       <td>{{ $job->location }}</td>
@@ -125,16 +125,16 @@
                         @endif
                       </td>
                       <td>
-                          {{ Seat\services\helpers\Img::character($job->installerID, 32, array('class' => 'img-circle', 'style' => 'width: 18px;height: 18px;', )) }}
+                          {{ Seat\services\helpers\Img::character($job->installerID, 16, array('class' => 'img-circle eveIcon small')) }}
                           {{ $job->installerName }}
                       </td>
                       <td>{{ $job->runs }}</td>
                       <td>
-                          {{ Seat\services\helpers\Img::type($job->blueprintTypeID, 32, array('style' => 'width: 18px;height: 18px;', )) }}
+                          {{ Seat\services\helpers\Img::type($job->blueprintTypeID, 32, array('class' => 'eveIcon medium')) }}
                           {{ $job->blueprintTypeName }}
                       </td>
                       <td>
-                          {{ Seat\services\helpers\Img::type($job->productTypeID, 32, array('style' => 'width: 18px;height: 18px;', )) }}
+                          {{ Seat\services\helpers\Img::type($job->productTypeID, 32, array('class' => 'eveIcon medium')) }}
                           {{ $job->productTypeName }}
                       </td>
                       <td>{{ $job->location }}</td>

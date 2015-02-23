@@ -30,7 +30,7 @@
 
               <b>From:</b>
               <a href="{{ action('CharacterController@getView', array('characterID' => $message->senderID)) }}">
-                  {{ Seat\services\helpers\Img::character($message->senderID, 32, array('class' => 'img-circle', 'style' => 'width: 18px;height: 18px;', )) }}
+                  {{ Seat\services\helpers\Img::character($message->senderID, 16, array('class' => 'img-circle eveIcon small')) }}
               </a>
               {{ $message->senderName }} sent about {{ Carbon\Carbon::parse($message->sentDate)->diffForHumans() }}
               @ {{ $message->sentDate }}
@@ -43,7 +43,7 @@
                 <b>To Corp/Alliance:</b>
 
                   @foreach (explode(',', $message->toCorpOrAllianceID) as $corp_alliance)
-                        {{ Seat\services\helpers\Img::html($corp_alliance, 32, array('class' => 'img-circle', 'style' => 'width: 18px;height: 18px;', )) }}
+                        {{ Seat\services\helpers\Img::html($corp_alliance, 16, array('class' => 'img-circle eveIcon small')) }}
                         <span rel="id-to-name">{{ $corp_alliance }}</span>
                   @endforeach
 
@@ -56,7 +56,7 @@
 
                   @foreach (explode(',', $message->toCharacterIDs) as $characterID)
                     <a href="{{ action('CharacterController@getView', array('characterID' => $characterID)) }}">
-                        {{ Seat\services\helpers\Img::character($characterID, 32, array('class' => 'img-circle', 'style' => 'width: 18px;height: 18px;', )) }}
+                        {{ Seat\services\helpers\Img::character($characterID, 16, array('class' => 'img-circle eveIcon small')) }}
                     </a>
                     <span rel="id-to-name">{{ $characterID }}</span>
                   @endforeach
@@ -128,7 +128,7 @@
                     <tr>
                       <td>
                         <a href="{{ action('CharacterController@getView', array('characterID' => $recipient)) }}">
-                            {{ Seat\services\helpers\Img::character($recipient, 32, array('class' => 'img-circle', 'style' => 'width: 18px;height: 18px;', )) }}
+                            {{ Seat\services\helpers\Img::character($recipient, 16, array('class' => 'img-circle eveIcon small')) }}
                             <span rel="id-to-name">{{ $recipient }}</span>
                         </a>
                       </td>

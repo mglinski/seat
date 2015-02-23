@@ -137,12 +137,12 @@
       var search_location = "{{ action('DashboardController@getSearch') }}";
 
       $(document).ready(function() {
-          $("img").unveil();
+          $("img:not(._unveiled)").unveil();
           $(window).on('shown.bs.tab', function(){
-              $("img").unveil();
+              $("img:not(._unveiled)").unveil();
           });
           $( document ).ajaxComplete(function() {
-              $("img").unveil();
+              $("img:not(._unveiled)").unveil();
           });
       });
 

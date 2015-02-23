@@ -31,7 +31,7 @@
                 <th>Offline Estimate</th>
                 <th>
 
-                    {{ Seat\services\helpers\Img::type('4051', 32, array('style' => 'width: 18px;height: 18px;')) }}
+                    {{ Seat\services\helpers\Img::type('4051', 16, array('class' => 'eveIcon small')) }}
                     Fuel Level
                 </th>
                 <th>State</th>
@@ -44,7 +44,7 @@
 
                 <tr>
                   <td>
-                      {{ Seat\services\helpers\Img::type($details->typeID, 32, array('style' => 'width: 18px;height: 18px;', )) }}
+                      {{ Seat\services\helpers\Img::type($details->typeID, 16, array('class' => 'eveIcon small')) }}
                       {{ $details->typeName }}
                   </td>
                   <td><b>{{ $starbase_names[$details->itemID] }}</b></td>
@@ -181,7 +181,7 @@
                     </tr>
                     <tr>
                       <td>
-                          {{ Seat\services\helpers\Img::type('4051', 32, array('style' => 'width: 18px;height: 18px;', )) }}
+                          {{ Seat\services\helpers\Img::type('4051', 16, array('class' => 'eveIcon small')) }}
                           <b>Fuel Blocks @if($details->security >= 0.5)+ Charters @endif:</b> {{ ($details->starbaseCharter) + ($details->fuelBlocks * 5) }} m3 / {{ $bay_sizes[$details->typeID]['fuelBay'] }} m3
                       </td>
                       <td>
@@ -193,7 +193,7 @@
                     </tr>
                     <tr>
                       <td>
-                          {{ Seat\services\helpers\Img::type('16275', 32, array('style' => 'width: 18px;height: 18px;')) }}
+                          {{ Seat\services\helpers\Img::type('16275', 16, array('class' => 'eveIcon small')) }}
                           <b>Strontium:</b> {{ ($details->strontium * 3) }} m3 / {{ $bay_sizes[$details->typeID]['strontBay'] }} m3
                       </td>
                       <td>
@@ -260,7 +260,7 @@
 
                                         <ul class="list-unstyled">
                                           <li>
-                                              {{ Seat\services\helpers\Img::type($module_content['typeID'], 32, array('style' => 'width: 18px;height: 18px;', )) }}
+                                              {{ Seat\services\helpers\Img::type($module_content['typeID'], 16, array('class' => 'eveIcon small')) }}
                                               <b>{{ $module_group_name }}</b>
                                              @if(!is_null($module_content['module_name']))
                                               <span class="text-muted">(called {{ $module_content['module_name'] }})</span>
@@ -289,7 +289,7 @@
                                                 <tr>
                                                   <td>{{ $content_item['quantity'] }}</td>
                                                   <td>
-                                                      {{ Seat\services\helpers\Img::type($content_item['typeID'], 32, array('style' => 'width: 18px;height: 18px;', )) }}
+                                                      {{ Seat\services\helpers\Img::type($content_item['typeID'], 16, array('class' => 'eveIcon small')) }}
                                                       {{ $content_item['name'] }}
                                                   </td>
                                                   <td>{{ round(( ($content_item['quantity'] * $content_item['volume']) / $module_content['used_volume']) * 100, 0) }}%</td>
@@ -361,7 +361,7 @@
 
                                         <ul class="list-unstyled">
                                           <li>
-                                              {{ Seat\services\helpers\Img::type($module_content['typeID'], 32, array('style' => 'width: 18px;height: 18px;', )) }}
+                                              {{ Seat\services\helpers\Img::type($module_content['typeID'], 16, array('class' => 'eveIcon small')) }}
                                               <b>{{ $module_group_name }}</b>
                                              @if(!is_null($module_content['module_name']))
                                               <span class="text-muted">(called {{ $module_content['module_name'] }})</span>
@@ -390,7 +390,7 @@
                                                 <tr>
                                                   <td>{{ $content_item['quantity'] }}</td>
                                                   <td>
-                                                      {{ Seat\services\helpers\Img::type($content_item['typeID'], 32, array('style' => 'width: 18px;height: 18px;', )) }}
+                                                      {{ Seat\services\helpers\Img::type($content_item['typeID'], 16, array('class' => 'eveIcon small')) }}
                                                       {{ $content_item['name'] }}
                                                   </td>
                                                   <td>{{ round(( ($content_item['quantity'] * $content_item['volume']) / $module_content['used_volume']) * 100, 0) }}%</td>
@@ -462,7 +462,7 @@
 
                                         <ul class="list-unstyled">
                                           <li>
-                                              {{ Seat\services\helpers\Img::type($module_content['typeID'], 32, array('style' => 'width: 18px;height: 18px;', )) }}
+                                              {{ Seat\services\helpers\Img::type($module_content['typeID'], 16, array('class' => 'eveIcon small')) }}
                                               <b>{{ $module_group_name }}</b>
                                              @if(!is_null($module_content['module_name']))
                                               <span class="text-muted">(called {{ $module_content['module_name'] }})</span>
@@ -491,7 +491,7 @@
                                                 <tr>
                                                   <td>{{ $content_item['quantity'] }}</td>
                                                   <td>
-                                                      {{ Seat\services\helpers\Img::type($content_item['typeID'], 32, array('style' => 'width: 18px;height: 18px;', )) }}
+                                                      {{ Seat\services\helpers\Img::type($content_item['typeID'], 16, array('class' => 'eveIcon small')) }}
                                                       {{ $content_item['name'] }}
                                                   </td>
                                                   <td>{{ round(( ($content_item['quantity'] * $content_item['volume']) / $module_content['used_volume']) * 100, 0) }}%</td>

@@ -42,7 +42,7 @@
                     </span>
                   </td>
                   <td>
-                      {{ Seat\services\helpers\Img::type($e->typeID, 32, array('style' => 'width: 18px;height: 18px;', )) }}
+                      {{ Seat\services\helpers\Img::type($e->typeID, 16, array('class' => 'eveIcon small')) }}
                       {{ $e->typeName }}
                   </td>
                   <td>{{ $e->quantity }}</td>

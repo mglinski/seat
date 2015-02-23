@@ -132,7 +132,7 @@
                         <tr>
                           <td>
                             <a href="{{ action('CharacterController@getView', array('characterID' => $entry->ownerID2 )) }}">
-                                {{ Seat\services\helpers\Img::character($entry->ownerID2, 32, array('class' => 'img-circle', 'style' => 'width: 18px;height: 18px;', )) }}
+                                {{ Seat\services\helpers\Img::character($entry->ownerID2, 16, array('class' => 'img-circle eveIcon small')) }}
                                 {{ $entry->ownerName2 }}
                             </a>
                           </td>
@@ -174,7 +174,7 @@
                       <tr>
                         <td>
                           <a href="{{ action('CharacterController@getView', array('characterID' => $entry->ownerID2 )) }}">
-                              {{ Seat\services\helpers\Img::character($entry->ownerID2, 32, array('class' => 'img-circle', 'style' => 'width: 18px;height: 18px;', )) }}
+                              {{ Seat\services\helpers\Img::character($entry->ownerID2, 16, array('class' => 'img-circle eveIcon small')) }}
                               {{ $entry->ownerName2 }}
                           </a>
                         </td>
@@ -217,7 +217,7 @@
                         <tr>
                           <td>
                             <a href="{{ action('CharacterController@getView', array('characterID' => $entry->ownerID2 )) }}">
-                                {{ Seat\services\helpers\Img::character($entry->ownerID2, 32, array('class' => 'img-circle', 'style' => 'width: 18px;height: 18px;', )) }}
+                                {{ Seat\services\helpers\Img::character($entry->ownerID2, 16, array('class' => 'img-circle eveIcon small')) }}
                                 {{ $entry->ownerName2 }}
                             </a>
                           </td>
@@ -260,7 +260,7 @@
                       <tr>
                         <td>
                           <a href="{{ action('CharacterController@getView', array('characterID' => $entry->ownerID1 )) }}">
-                              {{ Seat\services\helpers\Img::character($entry->ownerID1, 32, array('class' => 'img-circle', 'style' => 'width: 18px;height: 18px;', )) }}
+                              {{ Seat\services\helpers\Img::character($entry->ownerID1, 16, array('class' => 'img-circle eveIcon small')) }}
                               {{ $entry->ownerName1 }}
                           </a>
                         </td>
