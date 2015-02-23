@@ -260,7 +260,7 @@
 
       // Show or hide
       contents.toggle();
-      $('img.img-lazy-load:not(.img-unveiled,:hidden)', contents).unveil();
+      setupLazyLoader(contents);
 
       // some code for stylish
       if (contents.is(":visible")){
