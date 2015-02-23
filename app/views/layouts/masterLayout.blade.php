@@ -137,12 +137,12 @@
       var search_location = "{{ action('DashboardController@getSearch') }}";
 
       $(document).ready(function() {
-          $("img.img-lazy-load:not(.img-unveiled,:hidden)").unveil();
+          setupLazyLoader();
           $(window).on('shown.bs.tab', function(){
-              $("img.img-lazy-load:not(.img-unveiled:hidden)").unveil();
+              setupLazyLoader();
           });
           $( document ).ajaxComplete(function() {
-              $("img.img-lazy-load:not(.img-unveiled,:hidden)").unveil();
+              setupLazyLoader();
           });
       });
 
