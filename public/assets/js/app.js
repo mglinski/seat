@@ -94,11 +94,13 @@ $(function() {
             return;
         }
 
+	    /*
         //Add slimscroll
         $(".sidebar").slimscroll({
             height: ($(window).height() - $(".header").height()) + "px",
             color: "rgba(0,0,0,0.2)"
         });
+        */
     }
 
     //Fire upon load
