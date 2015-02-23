@@ -17,6 +17,7 @@
         retina = window.devicePixelRatio > 1,
         attrib = retina? "data-src-retina" : "data-src",
         images = this,
+        _className = "_unveiled",
         loaded;
 
     this.one("unveil", function() {
@@ -24,6 +25,7 @@
       source = source || this.getAttribute("data-src");
       if (source) {
         this.setAttribute("src", source);
+        this.addClass(_className);
         if (typeof callback === "function") callback.call(this);
       }
     });
@@ -32,6 +34,7 @@
       var inview = images.filter(function() {
         var $e = $(this);
         if ($e.is(":hidden")) return;
+        if ($e.hasClass(_className)) return;
 
         var wt = $w.scrollTop(),
             wb = wt + $w.height(),
