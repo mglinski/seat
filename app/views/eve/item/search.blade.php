@@ -74,6 +74,7 @@
           },
           success: function(result){
             $("div#result").html(result);
+            $("div#result img").unveil(); // image lazy loading
             $("table#datatable").dataTable({ paging:false });
           },
           error: function(xhr, textStatus, errorThrown){
