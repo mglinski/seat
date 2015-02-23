@@ -70,7 +70,7 @@
               @foreach($employment_history as $employment)
 
                 <li>
-                    {{ Seat\services\helpers\Img::corporation($employment->corporationID, 32, array('class' => 'img-circle eveIcon medium')) }}
+                    {{ Seat\services\helpers\Img::corporation($employment->corporationID, 16, array('class' => 'img-circle eveIcon small')) }}
                     Joined <b><span rel="id-to-name">{{ $employment->corporationID }}</span></b> on {{ $employment->startDate }} ({{ Carbon\Carbon::parse($employment->startDate)->diffForHumans() }})
                 </li>
 
