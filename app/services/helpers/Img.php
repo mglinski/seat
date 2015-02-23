@@ -57,8 +57,6 @@ class Img {
 	 */
 	public static function html($id, $size, $attrs) {
 
-		return self::_renderHtml($id, $size, self::Character, $attrs);
-
 		if ($id > 90000000 && $id < 98000000) {
 			return self::character($id, $size, $attrs);
 		}
@@ -104,7 +102,7 @@ class Img {
 	 * @return string
 	 */
 	public static function alliance($id, $size, $attrs) {
-		return self::_renderHtml($id, $size, self::Character, $attrs);
+		return self::_renderHtml($id, $size, self::Alliance, $attrs);
 	}
 
 	/**
@@ -134,12 +132,17 @@ class Img {
 		$html = '<img ';
 
 		// generate desired HTML attributes to properly lazy load
-		$html .= 'src="' . \URL::asset('assets/img/loader.gif') . '" ';
+		$html .= 'src="' . \URL::asset('assets/img/loading.gif') . '" ';
 		$html .= 'data-src="' . self::_renderUrl($id, $size, $type) . '" ';
 		$html .= 'data-src-retina="' . self::_renderUrl($id, ($size * 2), $type) . '" ';
 
 		// unset already built attributes
 		unset($attrs['src'], $attrs['data-src='], $attrs['data-src-retina']);
+
+		// set default height/width to keep images sizes correct
+		if (!isset($attrs['style'])) {
+			$attrs['style'] = "width:{$size}px; height:{$size}px;";
+		}
 
 		// render other attributes
 		foreach ($attrs as $name => $value) {
@@ -169,20 +172,20 @@ class Img {
 		// construct ending bit of URL
 		switch ($type) {
 			case self::Corporation:
-				$url .= '/' . self::$types[self::Corporation] . '/' . $id . '_' . $size . '.png';
+				$url .= self::$types[self::Corporation] . '/' . $id . '_' . $size . '.png';
 				break;
 
 			case self::Alliance:
-				$url .= '/' . self::$types[self::Alliance] . '/' . $id . '_' . $size . '.png';
+				$url .= self::$types[self::Alliance] . '/' . $id . '_' . $size . '.png';
 				break;
 
 			case self::Type:
-				$url .= '/' . self::$types[self::Type] . '/' . $id . '_' . $size . '.png';
+				$url .= self::$types[self::Type] . '/' . $id . '_' . $size . '.png';
 				break;
 
 			case self::Character:
 			default:
-				$url .= '/' . self::$types[self::Character] . '/' . $id . '_' . $size . '.jpg';
+				$url .= self::$types[self::Character] . '/' . $id . '_' . $size . '.jpg';
 		}
 
 		// return full URL

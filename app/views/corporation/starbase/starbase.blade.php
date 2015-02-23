@@ -50,7 +50,7 @@
                   <td><b>{{ $starbase_names[$details->itemID] }}</b></td>
                   <td>{{ $details->itemName }}</td>
                   <td>
-                    {{ $details->onlineTimeStamp }}</b> ({{ Carbon\Carbon::parse($details->onlineTimeStamp)->diffForHumans() }})
+                      <b>{{ $details->onlineTimeStamp }}</b> ({{ Carbon\Carbon::parse($details->onlineTimeStamp)->diffForHumans() }})
                   </td>
                   <td>{{ number_format($details->security, 1, $settings['decimal_seperator'], $settings['thousand_seperator']) }}</td>
                   <td>
@@ -390,7 +390,7 @@
                                                 <tr>
                                                   <td>{{ $content_item['quantity'] }}</td>
                                                   <td>
-                                                      {{ Seat\services\helpers\Img::type($content_item['typeID'], 32, array(style' => 'width: 18px;height: 18px;', )) }}
+                                                      {{ Seat\services\helpers\Img::type($content_item['typeID'], 32, array('style' => 'width: 18px;height: 18px;', )) }}
                                                       {{ $content_item['name'] }}
                                                   </td>
                                                   <td>{{ round(( ($content_item['quantity'] * $content_item['volume']) / $module_content['used_volume']) * 100, 0) }}%</td>
