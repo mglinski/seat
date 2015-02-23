@@ -348,7 +348,7 @@
 
       // Show or hide
       contents.toggle();
-      $('img.img-lazy-load:not(.img-unveiled)', contents).unveil();
+      $('img.img-lazy-load:not(.img-unveiled,:hidden)', contents).unveil();
 
       // some code for stylish
       if (contents.is(":visible")){
