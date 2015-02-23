@@ -13,7 +13,7 @@
       <div class="box box-primary">
         <div class="box-body">
           <p class="text-center">
-              {{ Seat\services\helpers\Img::character($character->characterID, 256, array('class' => 'img-circle', 'style' => 'width: 256px;height: 256px;', )) }}
+              {{ Seat\services\helpers\Img::character($character->characterID, 256, array('class' => 'img-circle eveIcon xxlarge')) }}
           </p>
           <p class="text-center lead">{{ $character->characterName }}</p>
         </div><!-- /.box-body -->
@@ -49,7 +49,7 @@
               <div class="row">
                 <a href="{{ action('CharacterController@getView', array('characterID' => $alt->characterID )) }}" style="color:inherit;">
                   <div class="col-md-4">
-                      {{ Seat\services\helpers\Img::character($alt->characterID, 64, array('class' => 'img-circle', 'style' => 'width: 64px;height: 64px;', )) }}
+                      {{ Seat\services\helpers\Img::character($alt->characterID, 64, array('class' => 'img-circle eveIcon large')) }}
                   </div>
                   <div class="col-md-8">
                     <ul class="list-unstyled">
@@ -90,7 +90,7 @@
                     @foreach ($other_alts as $person)
                       <li>
                         <a href="{{ action('CharacterController@getView', array('characterID' => $person->characterID)) }}">
-                            {{ Seat\services\helpers\Img::character($person->characterID, 32, array('class' => 'img-circle', 'style' => 'width: 18px;height: 18px;', )) }}
+                            {{ Seat\services\helpers\Img::character($person->characterID, 16, array('class' => 'img-circle eveIcon small')) }}
                             {{ $person->characterName }}
                         </a>
                       </li>
