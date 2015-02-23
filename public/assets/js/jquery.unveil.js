@@ -48,6 +48,7 @@
 
       loaded = inview.trigger("unveil");
       images = images.not(loaded);
+	  images.removeClass(removedClassName);
     }
 
     $w.on("scroll.unveil resize.unveil lookup.unveil", unveil);
