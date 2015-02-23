@@ -80,7 +80,7 @@ class Img {
 	 * @return string
 	 */
 	public static function character($id, $size, $attrs) {
-		return self::_renderHtml($id, $size, self::Character, $attrs);
+		return self::_renderHtml($id, ($size < 32 ? 32 : $size), self::Character, $attrs);
 	}
 
 	/**
