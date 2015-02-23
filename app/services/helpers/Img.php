@@ -164,9 +164,9 @@ class Img {
 
 			// put class on images to lazy load them
 			if (!isset($attrs['class'])) {
-				$attrs['src'] = '';
+				$attrs['class'] = '';
 			}
-			$attrs['src'] .= ' img-lazy-load';
+			$attrs['class'] .= ' img-lazy-load';
 		}
 		else {
 			// no lazy loaded image
