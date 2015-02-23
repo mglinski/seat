@@ -21,8 +21,6 @@
 	    removedClassName = "img-lazy-load",
         loaded;
 
-	  console.log(images);
-
     this.one("unveil", function() {
       var source = this.getAttribute(attrib);
       source = source || this.getAttribute("data-src");
