@@ -67,12 +67,12 @@
 
     <script type="text/javascript">
         $(document).ready(function() {
-            $("img:not(.img-unveiled)").unveil();
+            $("img.img-lazy-load:not(.img-unveiled)").unveil();
             $(window).on('shown.bs.tab', function(){
-                $("img:not(.img-unveiled)").unveil();
+                $("img.img-lazy-load:not(.img-unveiled)").unveil();
             });
             $( document ).ajaxComplete(function() {
-                $("img:not(.img-unveiled)").unveil();
+                $("img.img-lazy-load:not(.img-unveiled)").unveil();
             });
         });
     </script>

@@ -257,8 +257,10 @@
     $(".viewcontent").on("click", function( event ){
       // get the tbody tag direct after the button
       var contents = $(this).closest( "tbody").next( "tbody" );
+
       // Show or hide
       contents.toggle();
+      $('img.img-lazy-load:not(.img-unveiled)', contents).unveil();
 
       // some code for stylish
       if (contents.is(":visible")){

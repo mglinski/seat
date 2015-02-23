@@ -74,7 +74,7 @@
           },
           success: function(result){
             $("div#result").html(result);
-            $("div#result img:not(.img-unveiled)").unveil(); // image lazy loading
+            $("div#result img.img-lazy-load:not(.img-unveiled)").unveil(); // image lazy loading
             $("table#datatable").dataTable({ paging:false });
           },
           error: function(xhr, textStatus, errorThrown){

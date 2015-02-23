@@ -55,19 +55,19 @@ class Img {
 	 * @param $attrs
 	 * @return string
 	 */
-	public static function html($id, $size, $attrs) {
+	public static function html($id, $size, $attrs, $lazy = true) {
 
 		if ($id > 90000000 && $id < 98000000) {
-			return self::character($id, $size, $attrs);
+			return self::character($id, $size, $attrs, $lazy);
 		}
 		elseif (($id > 98000000 && $id < 99000000) || ($id > 1000000 && $id < 2000000)) {
-			return self::corporation($id, $size, $attrs);
+			return self::corporation($id, $size, $attrs, $lazy);
 		}
 		elseif (($id > 99000000 && $id < 100000000) || ($id > 0 && $id < 1000000)) {
-			return self::alliance($id, $size, $attrs);
+			return self::alliance($id, $size, $attrs, $lazy);
 		}
 		else {
-			return self::character($id, $size, $attrs);
+			return self::character($id, $size, $attrs, $lazy);
 		}
 	}
 
@@ -79,12 +79,12 @@ class Img {
 	 * @param $attrs
 	 * @return string
 	 */
-	public static function character($id, $size, $attrs) {
+	public static function character($id, $size, $attrs, $lazy = true) {
 		if ($size < 32) {
-			return self::_renderHtml($id, 32, self::Character, $attrs, 32);
+			return self::_renderHtml($id, 32, self::Character, $attrs, 32, $lazy);
 		}
 		else {
-			return self::_renderHtml($id, $size, self::Character, $attrs);
+			return self::_renderHtml($id, $size, self::Character, $attrs, $lazy);
 		}
 	}
 
@@ -94,29 +94,12 @@ class Img {
 	 * @param $attrs
 	 * @return string
 	 */
-	public static function corporation($id, $size, $attrs) {
+	public static function corporation($id, $size, $attrs, $lazy = true) {
 		if ($size < 32) {
-			return self::_renderHtml($id, 32, self::Corporation, $attrs, 32);
+			return self::_renderHtml($id, 32, self::Corporation, $attrs, 32, $lazy);
 		}
 		else {
-			return self::_renderHtml($id, $size, self::Corporation, $attrs);
-		}
-	}
-
-	/**
-	 *
-	 *
-	 * @param $id
-	 * @param $size
-	 * @param $attrs
-	 * @return string
-	 */
-	public static function alliance($id, $size, $attrs) {
-		if ($size < 32) {
-			return self::_renderHtml($id, 32, self::Alliance, $attrs, 32);
-		}
-		else {
-			return self::_renderHtml($id, $size, self::Alliance, $attrs);
+			return self::_renderHtml($id, $size, self::Corporation, $attrs, $lazy);
 		}
 	}
 
@@ -128,12 +111,29 @@ class Img {
 	 * @param $attrs
 	 * @return string
 	 */
-	public static function type($id, $size, $attrs) {
+	public static function alliance($id, $size, $attrs, $lazy = true) {
 		if ($size < 32) {
-			return self::_renderHtml($id, 32, self::Type, $attrs, 32);
+			return self::_renderHtml($id, 32, self::Alliance, $attrs, 32, $lazy);
 		}
 		else {
-			return self::_renderHtml($id, $size, self::Type, $attrs);
+			return self::_renderHtml($id, $size, self::Alliance, $attrs, $lazy);
+		}
+	}
+
+	/**
+	 *
+	 *
+	 * @param $id
+	 * @param $size
+	 * @param $attrs
+	 * @return string
+	 */
+	public static function type($id, $size, $attrs, $lazy = true) {
+		if ($size < 32) {
+			return self::_renderHtml($id, 32, self::Type, $attrs, 32, $lazy);
+		}
+		else {
+			return self::_renderHtml($id, $size, self::Type, $attrs, $lazy);
 		}
 	}
 
@@ -143,9 +143,10 @@ class Img {
 	 * @param $type
 	 * @param $attrs
 	 * @param int $retina_size
+	 * @param bool $lazy
 	 * @return string
 	 */
-	public static function _renderHtml($id, $size, $type, $attrs, $retina_size = 0) {
+	public static function _renderHtml($id, $size, $type, $attrs, $retina_size = 0, $lazy = true) {
 
 		// fix default retina image size
 		if ($retina_size === 0) {
@@ -155,10 +156,23 @@ class Img {
 		// make new IMG tag
 		$html = '<img ';
 
-		// generate desired HTML attributes to properly lazy load
-		$html .= 'src="' . \URL::asset('assets/img/bg.png') . '" ';
-		$html .= 'data-src="' . self::_renderUrl($id, $size, $type) . '" ';
-		$html .= 'data-src-retina="' . self::_renderUrl($id, $retina_size, $type) . '" ';
+		if ($lazy) {
+			// images are lazy loaded
+			$html .= 'src="' . \URL::asset('assets/img/bg.png') . '" ';
+			$html .= 'data-src="' . self::_renderUrl($id, $size, $type) . '" ';
+			$html .= 'data-src-retina="' . self::_renderUrl($id, $retina_size, $type) . '" ';
+
+			// put class on images to lazy load them
+			if (!isset($attrs['class'])) {
+				$attrs['src'] = '';
+			}
+			$attrs['src'] .= ' img-lazy-load';
+		}
+		else {
+			// no lazy loaded image
+			$html .= 'src="' . self::_renderUrl($id, $size, $type) . '" ';
+		}
+
 
 		// unset already built attributes
 		unset($attrs['src'], $attrs['data-src='], $attrs['data-src-retina']);
