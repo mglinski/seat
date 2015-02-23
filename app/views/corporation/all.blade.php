@@ -30,7 +30,7 @@
 
                 <tr>
                   <td>
-                      {{ Seat\services\helpers\Img::corporation($corporation->corporationID, 16, array('class' => 'img-circle eveIcon medium')) }}
+                      {{ Seat\services\helpers\Img::corporation($corporation->corporationID, 16, array('class' => 'img-circle eveIcon small')) }}
                       {{ $corporation->corporationName }} [{{ $corporation->ticker }}]
                   </td>
                   <td>
