@@ -95,7 +95,12 @@ class Img {
 	 * @return string
 	 */
 	public static function corporation($id, $size, $attrs) {
-		return self::_renderHtml($id, $size, self::Corporation, $attrs);
+		if ($size < 32) {
+			return self::_renderHtml($id, 32, self::Corporation, $attrs, 32);
+		}
+		else {
+			return self::_renderHtml($id, $size, self::Corporation, $attrs);
+		}
 	}
 
 	/**
@@ -107,7 +112,12 @@ class Img {
 	 * @return string
 	 */
 	public static function alliance($id, $size, $attrs) {
-		return self::_renderHtml($id, $size, self::Alliance, $attrs);
+		if ($size < 32) {
+			return self::_renderHtml($id, 32, self::Alliance, $attrs, 32);
+		}
+		else {
+			return self::_renderHtml($id, $size, self::Alliance, $attrs);
+		}
 	}
 
 	/**
