@@ -18,18 +18,20 @@
         attrib = retina? "data-src-retina" : "data-src",
         images = this,
 	    loadedClassName = "img-unveiled",
+	    removedClassName = "img-lazy-load",
         loaded;
 
     this.one("unveil", function() {
       var source = this.getAttribute(attrib);
       source = source || this.getAttribute("data-src");
       if (source) {
-	    $(this).addClass(loadedClassName).attr("src", source);
+	    $(this).addClass(loadedClassName).removeClass(removedClassName).attr("src", source);
         if (typeof callback === "function") callback.call(this);
       }
     });
 
     function unveil() {
+
       var inview = images.filter(function() {
         var $e = $(this);
         if ($e.is(":hidden") || $e.hasClass(loadedClassName)) return;
