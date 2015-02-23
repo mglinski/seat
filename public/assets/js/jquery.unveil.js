@@ -33,8 +33,7 @@
     function unveil() {
       var inview = images.filter(function() {
         var $e = $(this);
-        if ($e.is(":hidden")) return;
-        if ($e.hasClass(_className)) return;
+        if ($e.is(":hidden") || $e.hasClass(_className)) return;
 
         var wt = $w.scrollTop(),
             wb = wt + $w.height(),
