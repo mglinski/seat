@@ -80,7 +80,12 @@ class Img {
 	 * @return string
 	 */
 	public static function character($id, $size, $attrs) {
-		return self::_renderHtml($id, $size, self::Character, $attrs);
+		if ($size < 32) {
+			return self::_renderHtml($id, 32, self::Character, $attrs, 32);
+		}
+		else {
+			return self::_renderHtml($id, $size, self::Character, $attrs);
+		}
 	}
 
 	/**
@@ -118,15 +123,19 @@ class Img {
 	}
 
 	/**
-	 *
-	 *
 	 * @param $id
 	 * @param $size
 	 * @param $type
 	 * @param $attrs
+	 * @param int $retina_size
 	 * @return string
 	 */
-	public static function _renderHtml($id, $size, $type, $attrs) {
+	public static function _renderHtml($id, $size, $type, $attrs, $retina_size = 0) {
+
+		// fix default retina image size
+		if ($retina_size === 0) {
+			$retina_size = $size * 2;
+		}
 
 		// make new IMG tag
 		$html = '<img ';
@@ -134,7 +143,7 @@ class Img {
 		// generate desired HTML attributes to properly lazy load
 		$html .= 'src="' . \URL::asset('assets/img/bg.png') . '" ';
 		$html .= 'data-src="' . self::_renderUrl($id, $size, $type) . '" ';
-		$html .= 'data-src-retina="' . self::_renderUrl($id, ($size * 2), $type) . '" ';
+		$html .= 'data-src-retina="' . self::_renderUrl($id, $retina_size, $type) . '" ';
 
 		// unset already built attributes
 		unset($attrs['src'], $attrs['data-src='], $attrs['data-src-retina']);
