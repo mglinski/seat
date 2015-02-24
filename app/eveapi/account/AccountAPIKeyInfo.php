@@ -76,7 +76,7 @@ class APIKeyInfo extends BaseApi
                     // If we are rate limited, set the status of the eveapi
                     // server to 'down' in the cache so that subsequent
                     // calls don't fail because of this.
-                    \Cache::set('eve_api_down', true, 30);
+                    \Cache::put('eve_api_down', true, 30);
                     return;
 
                 // "EVE backend database temporarily disabled.""
@@ -84,7 +84,7 @@ class APIKeyInfo extends BaseApi
                     // The EVE API Database is apparently down, so mark the
                     // server as 'down' in the cache so that subsequent
                     // calls don't fail because of this.
-                    \Cache::set('eve_api_down', true, 30);
+                    \Cache::put('eve_api_down', true, 30);
                     return;
 
                 // "Web site database temporarily disabled."
@@ -92,7 +92,7 @@ class APIKeyInfo extends BaseApi
                     // The EVE API Database is apparently down, so mark the
                     // server as 'down' in the cache so that subsequent
                     // calls don't fail because of this.
-                    \Cache::set('eve_api_down', true, 30);
+                    \Cache::put('eve_api_down', true, 30);
                     return;
 
                 // "Authentication failure. Legacy API keys can no longer be
