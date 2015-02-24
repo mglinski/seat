@@ -1,6 +1,11 @@
 <?php
 /**
  * Img.php
+<<<<<<< HEAD
+=======
+ * Created by: matthewglinski
+ * Date: 2/20/15 9:57 AM
+>>>>>>> 85b67eacdd90beffd4a8b5b5c6ef983bcc3f9112
  */
 
 namespace Seat\services\helpers;
