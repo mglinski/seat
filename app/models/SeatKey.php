@@ -23,8 +23,14 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
+use Illuminate\Database\Eloquent\SoftDeletingTrait;
+
 class SeatKey extends Eloquent
 {
+
+	use SoftDeletingTrait;
+
+	protected $dates = ['deleted_at'];
 
     public function user()
     {
