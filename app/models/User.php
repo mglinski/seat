@@ -23,13 +23,18 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
+
 use Illuminate\Auth\UserInterface;
 use Illuminate\Auth\Reminders\RemindableInterface;
+use Illuminate\Database\Eloquent\SoftDeletingTrait;
 
 class User extends Eloquent implements UserInterface, RemindableInterface
 {
 
-    protected $softDelete = true;
+	use SoftDeletingTrait;
+
+	protected $dates = ['deleted_at'];
+
     protected $guarded = array('password');
 
     /**
