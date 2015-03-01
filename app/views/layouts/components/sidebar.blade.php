@@ -7,10 +7,10 @@
       <div class="pull-left image">
         {{-- See SettingHelper why this has to be more than 1 --}}
         @if($settings['main_character_id'] > 1)
-          <img src="{{ App\Services\Helpers\Helpers::generateEveImage( $settings['main_character_id'], 32) }}" class="img-circle" alt="User Image" />
-        @else
-          <img src="//image.eveonline.com/Character/1_32.jpg" class="img-circle" alt="User Image" />
-        @endif
+              {{ Seat\services\helpers\Img::character($settings['main_character_id'], 16, array('class' => 'img-circle eveIcon medium')) }}
+          @else
+              {{ Seat\services\helpers\Img::character('1', 16, array('class' => 'img-circle eveIcon medium')) }}
+          @endif
       </div>
       <div class="pull-left info">
         @if($settings['main_character_id'] > 1)
@@ -59,6 +59,7 @@
             <i class="fa fa-angle-left pull-right"></i>
           </a>
           <ul class="treeview-menu">
+            <li><a href="{{ action('CorporationController@getAll') }}"><i class="fa fa-angle-double-right"></i> All Corporations</a></li>
             @if(\Auth::hasAccess('asset_manager'))
               <li><a href="{{ action('CorporationController@getListAssets') }}"><i class="fa fa-angle-double-right"></i> Assets</a></li>
             @endif

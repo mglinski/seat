@@ -116,6 +116,12 @@ $(function() {
 
 });
 
+// Fix up the tooltips and popovers on AJAX response
+$(document).ajaxStop(function() {
+  $('[data-toggle="tooltip"]').tooltip();
+  $("[data-toggle='popover']").popover();
+});
+
 /*
  * SIDEBAR MENU
  * ------------
@@ -298,6 +304,19 @@ function performSearch(q) {
         });
 
     }
+}
+
+/**
+ * Lazy Load magic bootstrap
+ * @param content
+ */
+function setupLazyLoader(content) {
+	if (typeof content != 'undefined') {
+		$("img.img-lazy-load:not(.img-unveiled,:hidden)", content).unveil();
+	}
+	else {
+		$("img.img-lazy-load:not(.img-unveiled,:hidden)").unveil();
+	}
 }
 
 // Prevent the search form from being submitted
