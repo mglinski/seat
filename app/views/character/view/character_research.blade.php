@@ -22,7 +22,7 @@
 
                 <tr>
                   <td>
-                      {{ Seat\services\helpers\Img::character($agent->agentID, 16, array('class' => 'img-circle eveIcon small')) }}
+                      {{ Seat\Services\Helpers\Img::character($agent->agentID, 16, array('class' => 'img-circle eveIcon small')) }}
                       {{ $agent->itemName }}
                   </td>
                   <td>{{ $agent->typeName }}</td>

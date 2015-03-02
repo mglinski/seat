@@ -48,7 +48,7 @@
 
                       <tr>
                         <td>
-                            {{ Seat\services\helpers\Img::character($e->characterID, 16, array('class' => 'img-circle eveIcon small')) }}
+                            {{ Seat\Services\Helpers\Img::character($e->characterID, 16, array('class' => 'img-circle eveIcon small')) }}
                             {{ $e->name }}
                         </td>
                         <td>
@@ -88,7 +88,7 @@
 
                       <tr>
                         <td>
-                            {{ Seat\services\helpers\Img::character($e->characterID, 16, array('class' => 'img-circle eveIcon small')) }}
+                            {{ Seat\Services\Helpers\Img::character($e->characterID, 16, array('class' => 'img-circle eveIcon small')) }}
                             {{ $e->name }}
                         </td>
                         <td>
@@ -128,7 +128,7 @@
 
                       <tr>
                         <td>
-                            {{ Seat\services\helpers\Img::character($e->characterID, 16, array('class' => 'img-circle eveIcon small')) }}
+                            {{ Seat\Services\Helpers\Img::character($e->characterID, 16, array('class' => 'img-circle eveIcon small')) }}
                             {{ $e->name }}
                         </td>
                         <td>
@@ -168,7 +168,7 @@
 
                       <tr>
                         <td>
-                            {{ Seat\services\helpers\Img::character($e->characterID, 16, array('class' => 'img-circle eveIcon small')) }}
+                            {{ Seat\Services\Helpers\Img::character($e->characterID, 16, array('class' => 'img-circle eveIcon small')) }}
                             {{ $e->name }}
                         </td>
                         <td>
@@ -208,7 +208,7 @@
 
                       <tr>
                         <td>
-                            {{ Seat\services\helpers\Img::character($e->characterID, 16, array('class' => 'img-circle eveIcon small')) }}
+                            {{ Seat\Services\Helpers\Img::character($e->characterID, 16, array('class' => 'img-circle eveIcon small')) }}
                             {{ $e->name }}
                         </td>
                         <td>
@@ -248,7 +248,7 @@
 
                       <tr>
                         <td>
-                            {{ Seat\services\helpers\Img::character($e->characterID, 16, array('class' => 'img-circle eveIcon small')) }}
+                            {{ Seat\Services\Helpers\Img::character($e->characterID, 16, array('class' => 'img-circle eveIcon small')) }}
                             {{ $e->name }}
                         </td>
                         <td>
@@ -288,7 +288,7 @@
 
                       <tr>
                         <td>
-                            {{ Seat\services\helpers\Img::character($e->characterID, 16, array('class' => 'img-circle eveIcon small')) }}
+                            {{ Seat\Services\Helpers\Img::character($e->characterID, 16, array('class' => 'img-circle eveIcon small')) }}
                             {{ $e->name }}
                         </td>
                         <td>
@@ -328,7 +328,7 @@
 
                       <tr>
                         <td>
-                            {{ Seat\services\helpers\Img::character($e->characterID, 16, array('class' => 'img-circle eveIcon small')) }}
+                            {{ Seat\Services\Helpers\Img::character($e->characterID, 16, array('class' => 'img-circle eveIcon small')) }}
                             {{ $e->name }}
                         </td>
                         <td>
@@ -373,11 +373,11 @@
 
                       <tr>
                         <td>
-                            {{ Seat\services\helpers\Img::character($e->characterID, 16, array('class' => 'img-circle eveIcon small')) }}
+                            {{ Seat\Services\Helpers\Img::character($e->characterID, 16, array('class' => 'img-circle eveIcon small')) }}
                             {{ $e->characterName }}
                         </td>
                         <td>
-                            {{ Seat\services\helpers\Img::html($e->issuerID, 16, array('class' => 'img-circle eveIcon small')) }}
+                            {{ Seat\Services\Helpers\Img::html($e->issuerID, 16, array('class' => 'img-circle eveIcon small')) }}
                             {{ $e->issuerName }}
                         </td>
                         <td>{{ $e->roleLocationType }}</td>

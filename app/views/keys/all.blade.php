@@ -45,7 +45,7 @@
                   @foreach($key['characters'] as $char)
 
                     <a href="{{ action('CharacterController@getView', array('characterID' => $char['characterID'])) }}">
-                        {{ Seat\services\helpers\Img::character($char['characterID'], 16, array('class' => 'img-circle eveIcon small')) }}
+                        {{ Seat\Services\Helpers\Img::character($char['characterID'], 16, array('class' => 'img-circle eveIcon small')) }}
                         {{ $char['characterName'] }}
                     </a>
 

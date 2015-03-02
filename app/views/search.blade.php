@@ -40,7 +40,7 @@
                       <tr>
                         <td>
                           <a href="{{ action('CharacterController@getView', array('characterID' => $character->characterID)) }}">
-                              {{ Seat\services\helpers\Img::character($character->characterID, 16, array('class' => 'img-circle eveIcon small')) }}
+                              {{ Seat\Services\Helpers\Img::character($character->characterID, 16, array('class' => 'img-circle eveIcon small')) }}
                               {{ App\Services\Helpers\Helpers::highlightKeyword($character->characterName, $keyword) }}
                           </a>
                         </td>
@@ -82,7 +82,7 @@
                       <tr>
                         <td>
                           <a href="{{ action('CharacterController@getView', array('characterID' => $character_asset->characterID)) }}">
-                              {{ Seat\services\helpers\Img::character($character_asset->characterID, 16, array('class' => 'img-circle eveIcon small')) }}
+                              {{ Seat\Services\Helpers\Img::character($character_asset->characterID, 16, array('class' => 'img-circle eveIcon small')) }}
                               {{ $character_asset->characterName }}
                           </a>
                         </td>
@@ -124,7 +124,7 @@
                       <tr>
                         <td>
                           <a href="{{ action('CharacterController@getView', array('characterID' => $character_contact->characterID)) }}">
-                              {{ Seat\services\helpers\Img::character($character_contact->characterID, 16, array('class' => 'img-circle eveIcon small')) }}
+                              {{ Seat\Services\Helpers\Img::character($character_contact->characterID, 16, array('class' => 'img-circle eveIcon small')) }}
                               {{ $character_contact->characterName }}
                           </a>
                         </td>
@@ -171,7 +171,7 @@
                       <tr>
                         <td>
                           <a href="{{ action('CharacterController@getView', array('characterID' => $message->senderID)) }}">
-                              {{ Seat\services\helpers\Img::character($message->senderID, 16, array('class' => 'img-circle eveIcon small')) }}
+                              {{ Seat\Services\Helpers\Img::character($message->senderID, 16, array('class' => 'img-circle eveIcon small')) }}
                               {{ App\Services\Helpers\Helpers::highlightKeyword($message->senderName, $keyword) }}
                           </a>
                         </td>
@@ -214,7 +214,7 @@
                       <tr>
                         <td>
                           <a href="{{ action('CharacterController@getView', array('characterID' => $standing->characterID)) }}">
-                              {{ Seat\services\helpers\Img::character($standing->characterID, 16, array('class' => 'img-circle eveIcon small')) }}
+                              {{ Seat\Services\Helpers\Img::character($standing->characterID, 16, array('class' => 'img-circle eveIcon small')) }}
                               {{ App\Services\Helpers\Helpers::highlightKeyword($standing->characterName, $keyword) }}
                           </a>
                         </td>

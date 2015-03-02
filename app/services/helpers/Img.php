@@ -3,7 +3,7 @@
  * Img.php
  */
 
-namespace Seat\services\helpers;
+namespace Seat\Services\Helpers;
 
 /**
  * Class Img
