@@ -26,93 +26,93 @@ SOFTWARE.
 class HomeController extends BaseController
 {
 
-    /*
-    |--------------------------------------------------------------------------
-    | Default Home Controller
-    |--------------------------------------------------------------------------
-    |
-    | You may wish to use controllers instead of, or in addition to, Closure
-    | based routes. That's great! Here is an example controller method to
-    | get you started. To route to this controller, just add the route:
-    |
-    |   Route::get('/', 'HomeController@showWelcome');
-    |
-    */
+	/*
+	|--------------------------------------------------------------------------
+	| Default Home Controller
+	|--------------------------------------------------------------------------
+	|
+	| You may wish to use controllers instead of, or in addition to, Closure
+	| based routes. That's great! Here is an example controller method to
+	| get you started. To route to this controller, just add the route:
+	|
+	|   Route::get('/', 'HomeController@showWelcome');
+	|
+	*/
 
-    public function showIndex()
-    {
+	public function showIndex()
+	{
 
-        // Prepare some summarized totals for the home view to display in the
-        // widgets
+		// Prepare some summarized totals for the home view to display in the
+		// widgets
 
-        // EVE Online Server Information
-        $server = EveServerServerStatus::find(1);
+		// EVE Online Server Information
+		$server = EveServerServerStatus::find(1);
 
-        // Key Information
-        // If the user has 0 keys, we can 0 all of the values
-        // If the user has keys, determine values only applicable to
-        // this users keys
-        if (!\Auth::isSuperUser()) {
+		// Key Information
+		// If the user has 0 keys, we can 0 all of the values
+		// If the user has keys, determine values only applicable to
+		// this users keys
+		if (!\Auth::isSuperUser()) {
 
-            if (count(Session::get('valid_keys')) > 0) {
+			if (count(Session::get('valid_keys')) > 0) {
 
-                $total_keys = SeatKey::whereIn('keyID', Session::get('valid_keys'))->count();
+				$total_keys = SeatKey::whereIn('keyID', Session::get('valid_keys'))->count();
 
-                $total_characters = EveCharacterCharacterSheet::join('account_apikeyinfo_characters', 'account_apikeyinfo_characters.characterID', '=', 'character_charactersheet.characterID')
-                    ->join('account_apikeyinfo', 'account_apikeyinfo.keyID', '=', 'account_apikeyinfo_characters.keyID')
-                    ->whereIn('account_apikeyinfo_characters.keyID', Session::get('valid_keys'))
-                    ->where('account_apikeyinfo.type','!=','Corporation')
-                    ->count();
+				$total_characters = EveCharacterCharacterSheet::join('account_apikeyinfo_characters', 'account_apikeyinfo_characters.characterID', '=', 'character_charactersheet.characterID')
+					->join('account_apikeyinfo', 'account_apikeyinfo.keyID', '=', 'account_apikeyinfo_characters.keyID')
+					->whereIn('account_apikeyinfo_characters.keyID', Session::get('valid_keys'))
+					->where('account_apikeyinfo.type','!=','Corporation')
+					->count();
 
-                $total_corporations = EveCorporationCorporationSheet::join('account_apikeyinfo_characters', 'account_apikeyinfo_characters.characterID', '=', 'character_charactersheet.characterID')
-                    ->join('account_apikeyinfo', 'account_apikeyinfo.keyID', '=', 'account_apikeyinfo_characters.keyID')
-                    ->whereIn('account_apikeyinfo_characters.keyID', Session::get('valid_keys'))
-                    ->where('account_apikeyinfo.type','=','Corporation')
-                    ->count();
+				$total_corporations = EveCorporationCorporationSheet::join('account_apikeyinfo_characters', 'account_apikeyinfo_characters.corporationID', '=', 'corporation_corporationsheet.corporationID')
+					->join('account_apikeyinfo', 'account_apikeyinfo.keyID', '=', 'account_apikeyinfo_characters.keyID')
+					->whereIn('account_apikeyinfo_characters.keyID', Session::get('valid_keys'))
+					->where('account_apikeyinfo.type','=','Corporation')
+					->count();
 
-	            $total_char_isk = EveCharacterCharacterSheet::join('account_apikeyinfo_characters', 'account_apikeyinfo_characters.characterID', '=', 'character_charactersheet.characterID')
-		            ->join('account_apikeyinfo', 'account_apikeyinfo.keyID', '=', 'account_apikeyinfo_characters.keyID')
-		            ->whereIn('account_apikeyinfo_characters.keyID', Session::get('valid_keys'))
-		            ->where('account_apikeyinfo.type','!=','Corporation')
-		            ->sum('balance');
+				$total_char_isk = EveCharacterCharacterSheet::join('account_apikeyinfo_characters', 'account_apikeyinfo_characters.characterID', '=', 'character_charactersheet.characterID')
+					->join('account_apikeyinfo', 'account_apikeyinfo.keyID', '=', 'account_apikeyinfo_characters.keyID')
+					->whereIn('account_apikeyinfo_characters.keyID', Session::get('valid_keys'))
+					->where('account_apikeyinfo.type','!=','Corporation')
+					->sum('balance');
 
-	            $total_corp_isk = EveCorporationAccountBalance::join('account_apikeyinfo_characters', 'account_apikeyinfo_characters.characterID', '=', 'character_charactersheet.characterID')
-		            ->join('account_apikeyinfo', 'account_apikeyinfo.keyID', '=', 'account_apikeyinfo_characters.keyID')
-		            ->whereIn('account_apikeyinfo_characters.keyID', Session::get('valid_keys'))
-		            ->where('account_apikeyinfo.type','=','Corporation')
-	                ->where('accountKey', '!=', EveCorporationAccountBalance::Dust_Account_Key)->sum('balance');
+				$total_corp_isk = EveCorporationAccountBalance::join('account_apikeyinfo_characters', 'account_apikeyinfo_characters.corporationID', '=', 'corporation_corporationsheet.corporationID')
+					->join('account_apikeyinfo', 'account_apikeyinfo.keyID', '=', 'account_apikeyinfo_characters.keyID')
+					->whereIn('account_apikeyinfo_characters.keyID', Session::get('valid_keys'))
+					->where('account_apikeyinfo.type','=','Corporation')
+					->where('accountKey', '!=', EveCorporationAccountBalance::Dust_Account_Key)->sum('balance');
 
-                $total_skillpoints = EveCharacterCharacterSheetSkills::join('account_apikeyinfo_characters', 'account_apikeyinfo_characters.characterID', '=', 'character_charactersheet_skills.characterID')
-                    ->join('account_apikeyinfo', 'account_apikeyinfo.keyID', '=', 'account_apikeyinfo_characters.keyID')
-                    ->whereIn('account_apikeyinfo_characters.keyID', Session::get('valid_keys'))
-                    ->where('account_apikeyinfo.type','!=','Corporation')
-                    ->sum('skillpoints');
+				$total_skillpoints = EveCharacterCharacterSheetSkills::join('account_apikeyinfo_characters', 'account_apikeyinfo_characters.characterID', '=', 'character_charactersheet_skills.characterID')
+					->join('account_apikeyinfo', 'account_apikeyinfo.keyID', '=', 'account_apikeyinfo_characters.keyID')
+					->whereIn('account_apikeyinfo_characters.keyID', Session::get('valid_keys'))
+					->where('account_apikeyinfo.type','!=','Corporation')
+					->sum('skillpoints');
 
-            } else {
+			} else {
 
-                $total_keys = $total_characters = $total_corporations = $total_char_isk = $total_corp_isk= $total_skillpoints = 0;
+				$total_keys = $total_characters = $total_corporations = $total_char_isk = $total_corp_isk= $total_skillpoints = 0;
 
-            }
+			}
 
-        } else {
+		} else {
 
-            // Super user gets all of the data!
-            $total_keys = SeatKey::count();
-            $total_characters = EveCharacterCharacterSheet::count();
-	        $total_corporations = EveCorporationCorporationSheet::count();
-            $total_char_isk = EveCharacterCharacterSheet::sum('balance');
-	        $total_corp_isk = EveCorporationAccountBalance::where('accountKey', '!=', EveCorporationAccountBalance::Dust_Account_Key)->sum('balance');
-            $total_skillpoints = EveCharacterCharacterSheetSkills::sum('skillpoints');
+			// Super user gets all of the data!
+			$total_keys = SeatKey::count();
+			$total_characters = EveCharacterCharacterSheet::count();
+			$total_corporations = EveCorporationCorporationSheet::count();
+			$total_char_isk = EveCharacterCharacterSheet::sum('balance');
+			$total_corp_isk = EveCorporationAccountBalance::where('accountKey', '!=', EveCorporationAccountBalance::Dust_Account_Key)->sum('balance');
+			$total_skillpoints = EveCharacterCharacterSheetSkills::sum('skillpoints');
 
-        }
+		}
 
-        return View::make('home')
-            ->with('server', $server)
-            ->with('total_keys', $total_keys)
-            ->with('total_characters', $total_characters)
-            ->with('total_corporations', $total_corporations)
-            ->with('total_char_isk', $total_char_isk)
-            ->with('total_corp_isk', $total_corp_isk)
-            ->with('total_skillpoints', $total_skillpoints);
-    }
+		return View::make('home')
+			->with('server', $server)
+			->with('total_keys', $total_keys)
+			->with('total_characters', $total_characters)
+			->with('total_corporations', $total_corporations)
+			->with('total_char_isk', $total_char_isk)
+			->with('total_corp_isk', $total_corp_isk)
+			->with('total_skillpoints', $total_skillpoints);
+	}
 }
